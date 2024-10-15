@@ -1,0 +1,22 @@
+{
+	"name": "components",
+	"version": "1.0.0",
+	"description": "Gutenberg Components",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tigriweb/components.git"
+	},
+	"keywords": [
+		"gutenberg",
+		"react",
+		"component",
+		"wp",
+		"wordpress"
+	],
+	"author": "TigriWeb <tigriweb@gmail.com> (https://tigriweb.com)",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/tigriweb/components/issues"
+	},
+	"homepage": "https://github.com/tigriweb/components"
+}
