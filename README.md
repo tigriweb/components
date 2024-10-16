@@ -10,4 +10,8 @@ By leveraging these components, developers can streamline the process of creatin
 * [Primitives](https://tigriweb.gitbook.io/doc/gutenberg/primitives)
 * ...
 
+
+
+---
+
 With Love by [TigriWeb](https://tigriweb.com/ "TigriWeb").
