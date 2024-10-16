@@ -9,7 +9,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue }) => {
 	const postTypeRecords = useSelect(select => {

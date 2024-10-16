@@ -22,7 +22,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	const [mediaData, setMediaData] = useState();

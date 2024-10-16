@@ -8,7 +8,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (

@@ -9,7 +9,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue }) => {
 	const taxonomyRecords = useSelect(select => {

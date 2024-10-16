@@ -4,7 +4,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaCheckboxControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (

@@ -25,7 +25,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const twebFilterIcons = event => {
 	const searchText = event.target.value.toLowerCase();

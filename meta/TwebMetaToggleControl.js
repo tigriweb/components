@@ -5,7 +5,7 @@ import {
 import {
 	twebWithPostMeta,
 	twebGetTextFromArray,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaToggleControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (

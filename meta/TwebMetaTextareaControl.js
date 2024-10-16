@@ -4,7 +4,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaTextareaControl = twebWithPostMeta(({ label, help, type, metaValue, setMetaValue }) => {
 	return (

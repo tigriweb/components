@@ -5,7 +5,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaSelectControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue }) => {
 	return (

@@ -4,7 +4,7 @@ import {
 
 import {
 	twebWithPostMeta,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1, metaValue, setMetaValue }) => {
 	return (

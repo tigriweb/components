@@ -163,6 +163,18 @@ declare module "attributes/TwebBlockTextareaControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
+declare module "helpers/twebWithPostMeta" {
+    export default twebWithPostMeta;
+    function twebWithPostMeta(WrappedComponent: any): any;
+}
+declare module "helpers/twebGetTextFromArray" {
+    export default twebGetTextFromArray;
+    function twebGetTextFromArray(textData: any, metaValue: any): any;
+}
+declare module "helpers/index" {
+    export { default as twebWithPostMeta } from "./twebWithPostMeta";
+    export { default as twebGetTextFromArray } from "./twebGetTextFromArray";
+}
 declare module "attributes/TwebBlockToggleControl" {
     export default TwebBlockToggleControl;
     function TwebBlockToggleControl({ label, help, name, onChange, attributes, setAttributes }: {

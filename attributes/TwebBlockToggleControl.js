@@ -4,7 +4,7 @@ import {
 
 import {
 	twebGetTextFromArray,
-} from '@tweb/modules';
+} from './../helpers';
 
 const TwebBlockToggleControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
 	return (
