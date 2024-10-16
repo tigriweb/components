@@ -1,5 +1,5 @@
 {
-	"name": "@tweb/components",
+	"name": "@tigriweb/components",
 	"version": "1.0.0",
 	"description": "Gutenberg Components",
 	"repository": {
@@ -19,8 +19,5 @@
 	"bugs": {
 		"url": "https://github.com/tigriweb/components/issues"
 	},
-	"homepage": "https://github.com/tigriweb/components",
-	"scripts": {
-		"tsc" : "tsc"
-	}
+	"homepage": "https://github.com/tigriweb/components"
 }
