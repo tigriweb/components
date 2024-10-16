@@ -16,7 +16,7 @@ import {
 
 import {
 	TwebSVG,
-} from './../components/primitives';
+} from './../primitives';
 
 import {
 	SVG,
