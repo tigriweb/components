@@ -12,6 +12,4 @@ By leveraging these components, developers can streamline the process of creatin
 
 
 
----
-
 With Love by [TigriWeb](https://tigriweb.com/ "TigriWeb").
