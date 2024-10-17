@@ -2,13 +2,14 @@
 	"include": [
 		"attributes/*",
 		"controls/*",
+		"helpers/*",
 		"meta/*",
 		"primitives/*"
 	],
 	"compilerOptions": {
-		"outFile": "@types/tigriweb__components.d.ts",
+		"outFile": "@types/index.d.ts",
 		"emitDeclarationOnly": true,
-		"declarationMap": true,
+		"declarationMap": false,
 		"declaration": true,
 		"module": "commonjs",
 		"allowJs": true

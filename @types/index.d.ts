@@ -404,4 +404,3 @@ declare module "meta/index" {
     export { default as TwebMetaTextControl } from "./TwebMetaTextControl";
     export { default as TwebMetaToggleControl } from "./TwebMetaToggleControl";
 }
-//# sourceMappingURL=tigriweb__components.d.ts.map
