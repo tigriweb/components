@@ -15,7 +15,7 @@
 	],
 	"author": "TigriWeb <tigriweb@gmail.com> (https://tigriweb.com)",
 	"license": "ISC",
-	"types": "./@types/tigriweb__components.d.ts",
+	"types": "@types/index.d.ts",
 	"bugs": {
 		"url": "https://github.com/tigriweb/components/issues"
 	},
