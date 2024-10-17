@@ -1,27 +1,17 @@
 {
 	"include": [
-	  "./attributes/*.js",
-	  "./controls/*.js",
-	  "./helpers/*.js",
-	  "./meta/*.js",
-	  "./primitives/*.js"
-	],
-	"exclude": [
-	  "./dist"
+		"attributes/*",
+		"controls/*",
+		"helpers/*",
+		"meta/*",
+		"primitives/*"
 	],
 	"compilerOptions": {
-	  "outDir": "./@types",  // Замість outFile
-	  "emitDeclarationOnly": true,
-	  "declarationMap": false,
-	  "declaration": true,
-	  "module": "commonjs",  // Зміни на commonjs
-	  "target": "ESNext",
-	  "allowJs": true,
-	  "checkJs": false,
-	  "baseUrl": ".",
-	  "paths": {
-		"@tigriweb/components/*": ["./*"]
-	  },
-	  "moduleResolution": "node"
+		"outFile": "@types/index.d.ts",
+		"emitDeclarationOnly": true,
+		"declarationMap": false,
+		"declaration": true,
+		"module": "commonjs",
+		"allowJs": true
 	}
-  }
+}
