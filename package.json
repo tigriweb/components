@@ -1,6 +1,6 @@
 {
 	"name": "@tigriweb/components",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Gutenberg Components",
 	"repository": {
 		"type": "git",
@@ -15,7 +15,6 @@
 	],
 	"author": "TigriWeb <tigriweb@gmail.com> (https://tigriweb.com)",
 	"license": "ISC",
-	"types": "@types/index.d.ts",
 	"bugs": {
 		"url": "https://github.com/tigriweb/components/issues"
 	},
