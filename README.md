@@ -6,7 +6,7 @@ By leveraging these components, developers can streamline the process of creatin
 
 ## Installation
 
-Install the module using your preferred package manager:
+Install with your preferred package manager:
 
 ```
 yarn add --dev @tigriweb/components
