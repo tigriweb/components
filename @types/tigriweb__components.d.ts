@@ -28,6 +28,17 @@ declare module "attributes/TwebBlockHtmlControl" {
         help: any;
     }): import("react").JSX.Element;
 }
+declare module "primitives/TwebSVG" {
+    export default TwebSVG;
+    function TwebSVG({ icon, size, stroke }: {
+        icon: any;
+        size?: number;
+        stroke?: number;
+    }): import("react").JSX.Element;
+}
+declare module "primitives/index" {
+    export { default as TwebSVG } from "./TwebSVG";
+}
 declare module "attributes/TwebBlockIconControl" {
     export default TwebBlockIconControl;
     function TwebBlockIconControl({ label, help, name, attributes, setAttributes }: {
@@ -393,15 +404,4 @@ declare module "meta/index" {
     export { default as TwebMetaTextControl } from "./TwebMetaTextControl";
     export { default as TwebMetaToggleControl } from "./TwebMetaToggleControl";
 }
-declare module "primitives/TwebSVG" {
-    export default TwebSVG;
-    function TwebSVG({ icon, size, stroke }: {
-        icon: any;
-        size?: number;
-        stroke?: number;
-    }): import("react").JSX.Element;
-}
-declare module "primitives/index" {
-    export { default as TwebSVG } from "./TwebSVG";
-}
-//# sourceMappingURL=index.d.ts.map
+//# sourceMappingURL=tigriweb__components.d.ts.map
