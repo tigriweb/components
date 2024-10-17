@@ -37,7 +37,7 @@ declare module "@tigriweb/components/primitives/TwebSVG" {
     }): import("react").JSX.Element;
 }
 declare module "@tigriweb/components/primitives" {
-    export { default as TwebSVG } from "@tigriweb/components/primitives/../primitives/TwebSVG";
+    export { default as TwebSVG } from "@tigriweb/components/primitives/TwebSVG";
 }
 declare module "@tigriweb/components/attributes/TwebBlockIconControl" {
     export default TwebBlockIconControl;
