@@ -7,7 +7,7 @@
 		"primitives/*"
 	],
 	"compilerOptions": {
-		"outFile": "@types/tigriweb__components.d.ts",
+		"outFile": "index.d.ts",
 		"emitDeclarationOnly": true,
 		"declarationMap": false,
 		"declaration": true,
