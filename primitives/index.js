@@ -1,1 +1,1 @@
-export { default as TwebSVG } from './TwebSVG';
+export { default as TwebSVG } from './../primitives/TwebSVG';

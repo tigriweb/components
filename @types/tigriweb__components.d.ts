@@ -1,4 +1,4 @@
-declare module "@tweb/components/attributes/TwebBlockCheckboxControl" {
+declare module "@tigriweb/components/attributes/TwebBlockCheckboxControl" {
     export default TwebBlockCheckboxControl;
     function TwebBlockCheckboxControl({ label, help, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -9,7 +9,7 @@ declare module "@tweb/components/attributes/TwebBlockCheckboxControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockColorGradientControl" {
+declare module "@tigriweb/components/attributes/TwebBlockColorGradientControl" {
     export default TwebBlockColorGradientControl;
     function TwebBlockColorGradientControl({ label, nameColor, nameGradient, onColorChange, onGradientChange, attributes, setAttributes }: {
         label: any;
@@ -21,14 +21,14 @@ declare module "@tweb/components/attributes/TwebBlockColorGradientControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockHtmlControl" {
+declare module "@tigriweb/components/attributes/TwebBlockHtmlControl" {
     export default TwebBlockHtmlControl;
     function TwebBlockHtmlControl({ label, help }: {
         label: any;
         help: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/primitives/TwebSVG" {
+declare module "@tigriweb/components/primitives/TwebSVG" {
     export default TwebSVG;
     function TwebSVG({ icon, size, stroke }: {
         icon: any;
@@ -36,10 +36,10 @@ declare module "@tweb/components/primitives/TwebSVG" {
         stroke?: number;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/primitives" {
-    export { default as TwebSVG } from "./TwebSVG";
+declare module "@tigriweb/components/primitives" {
+    export { default as TwebSVG } from "@tigriweb/components/primitives/../primitives/TwebSVG";
 }
-declare module "@tweb/components/attributes/TwebBlockIconControl" {
+declare module "@tigriweb/components/attributes/TwebBlockIconControl" {
     export default TwebBlockIconControl;
     function TwebBlockIconControl({ label, help, name, attributes, setAttributes }: {
         label: any;
@@ -49,7 +49,7 @@ declare module "@tweb/components/attributes/TwebBlockIconControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockMediaControl" {
+declare module "@tigriweb/components/attributes/TwebBlockMediaControl" {
     export default TwebBlockMediaControl;
     function TwebBlockMediaControl({ label, help, name, onSelect, attributes, setAttributes }: {
         label: any;
@@ -67,7 +67,7 @@ declare module "@tweb/components/attributes/TwebBlockMediaControl" {
         }): import("react").JSX.Element;
     }
 }
-declare module "@tweb/components/attributes/TwebBlockPostTypeControl" {
+declare module "@tigriweb/components/attributes/TwebBlockPostTypeControl" {
     export default TwebBlockPostTypeControl;
     function TwebBlockPostTypeControl({ label, help, postType, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -79,7 +79,7 @@ declare module "@tweb/components/attributes/TwebBlockPostTypeControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockPostTypeMultipleControl" {
+declare module "@tigriweb/components/attributes/TwebBlockPostTypeMultipleControl" {
     export default TwebBlockPostTypeMultipleControl;
     function TwebBlockPostTypeMultipleControl({ label, help, postType, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -91,7 +91,7 @@ declare module "@tweb/components/attributes/TwebBlockPostTypeMultipleControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockRadioControl" {
+declare module "@tigriweb/components/attributes/TwebBlockRadioControl" {
     export default TwebBlockRadioControl;
     function TwebBlockRadioControl({ label, help, choices, name, attributes, setAttributes }: {
         label: any;
@@ -102,7 +102,7 @@ declare module "@tweb/components/attributes/TwebBlockRadioControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockRangeControl" {
+declare module "@tigriweb/components/attributes/TwebBlockRangeControl" {
     export default TwebBlockRangeControl;
     function TwebBlockRangeControl({ label, help, min, max, step, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -116,7 +116,7 @@ declare module "@tweb/components/attributes/TwebBlockRangeControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockSelectControl" {
+declare module "@tigriweb/components/attributes/TwebBlockSelectControl" {
     export default TwebBlockSelectControl;
     function TwebBlockSelectControl({ label, help, choices, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -128,7 +128,7 @@ declare module "@tweb/components/attributes/TwebBlockSelectControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockTaxonomyControl" {
+declare module "@tigriweb/components/attributes/TwebBlockTaxonomyControl" {
     export default TwebBlockTaxonomyControl;
     function TwebBlockTaxonomyControl({ label, help, taxonomy, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -140,7 +140,7 @@ declare module "@tweb/components/attributes/TwebBlockTaxonomyControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockTaxonomySelectControl" {
+declare module "@tigriweb/components/attributes/TwebBlockTaxonomySelectControl" {
     export default TwebBlockTaxonomySelectControl;
     function TwebBlockTaxonomySelectControl({ label, help, taxonomy, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -152,7 +152,7 @@ declare module "@tweb/components/attributes/TwebBlockTaxonomySelectControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockTextControl" {
+declare module "@tigriweb/components/attributes/TwebBlockTextControl" {
     export default TwebBlockTextControl;
     function TwebBlockTextControl({ label, help, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -163,7 +163,7 @@ declare module "@tweb/components/attributes/TwebBlockTextControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebBlockTextareaControl" {
+declare module "@tigriweb/components/attributes/TwebBlockTextareaControl" {
     export default TwebBlockTextareaControl;
     function TwebBlockTextareaControl({ label, help, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -174,19 +174,19 @@ declare module "@tweb/components/attributes/TwebBlockTextareaControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/helpers/twebWithPostMeta" {
+declare module "@tigriweb/components/helpers/twebWithPostMeta" {
     export default twebWithPostMeta;
     function twebWithPostMeta(WrappedComponent: any): any;
 }
-declare module "@tweb/components/helpers/twebGetTextFromArray" {
+declare module "@tigriweb/components/helpers/twebGetTextFromArray" {
     export default twebGetTextFromArray;
     function twebGetTextFromArray(textData: any, metaValue: any): any;
 }
-declare module "@tweb/components/helpers" {
-    export { default as twebWithPostMeta } from "./twebWithPostMeta";
-    export { default as twebGetTextFromArray } from "./twebGetTextFromArray";
+declare module "@tigriweb/components/helpers" {
+    export { default as twebWithPostMeta } from "@tigriweb/components/helpers/twebWithPostMeta";
+    export { default as twebGetTextFromArray } from "@tigriweb/components/helpers/twebGetTextFromArray";
 }
-declare module "@tweb/components/attributes/TwebBlockToggleControl" {
+declare module "@tigriweb/components/attributes/TwebBlockToggleControl" {
     export default TwebBlockToggleControl;
     function TwebBlockToggleControl({ label, help, name, onChange, attributes, setAttributes }: {
         label: any;
@@ -197,7 +197,7 @@ declare module "@tweb/components/attributes/TwebBlockToggleControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebToolbarButton" {
+declare module "@tigriweb/components/attributes/TwebToolbarButton" {
     export default TwebToolbarButton;
     function TwebToolbarButton({ label, icon, name, onClick, attributes, setAttributes }: {
         label: any;
@@ -208,7 +208,7 @@ declare module "@tweb/components/attributes/TwebToolbarButton" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes/TwebToolbarGroup" {
+declare module "@tigriweb/components/attributes/TwebToolbarGroup" {
     export default TwebToolbarGroup;
     function TwebToolbarGroup({ label, groupData, name, attributes, setAttributes }: {
         label: any;
@@ -218,26 +218,26 @@ declare module "@tweb/components/attributes/TwebToolbarGroup" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/attributes" {
-    export { default as TwebBlockCheckboxControl } from "./TwebBlockCheckboxControl";
-    export { default as TwebBlockHtmlControl } from "./TwebBlockHtmlControl";
-    export { default as TwebBlockIconControl } from "./TwebBlockIconControl";
-    export { default as TwebBlockMediaControl } from "./TwebBlockMediaControl";
-    export { default as TwebBlockPostTypeControl } from "./TwebBlockPostTypeControl";
-    export { default as TwebBlockPostTypeMultipleControl } from "./TwebBlockPostTypeMultipleControl";
-    export { default as TwebBlockRadioControl } from "./TwebBlockRadioControl";
-    export { default as TwebBlockRangeControl } from "./TwebBlockRangeControl";
-    export { default as TwebBlockSelectControl } from "./TwebBlockSelectControl";
-    export { default as TwebBlockTaxonomyControl } from "./TwebBlockTaxonomyControl";
-    export { default as TwebBlockTaxonomySelectControl } from "./TwebBlockTaxonomySelectControl";
-    export { default as TwebBlockTextareaControl } from "./TwebBlockTextareaControl";
-    export { default as TwebBlockTextControl } from "./TwebBlockTextControl";
-    export { default as TwebBlockToggleControl } from "./TwebBlockToggleControl";
-    export { default as TwebBlockColorGradientControl } from "./TwebBlockColorGradientControl";
-    export { default as TwebToolbarButton } from "./TwebToolbarButton";
-    export { default as TwebToolbarGroup } from "./TwebToolbarGroup";
+declare module "@tigriweb/components/attributes" {
+    export { default as TwebBlockCheckboxControl } from "@tigriweb/components/attributes/TwebBlockCheckboxControl";
+    export { default as TwebBlockHtmlControl } from "@tigriweb/components/attributes/TwebBlockHtmlControl";
+    export { default as TwebBlockIconControl } from "@tigriweb/components/attributes/TwebBlockIconControl";
+    export { default as TwebBlockMediaControl } from "@tigriweb/components/attributes/TwebBlockMediaControl";
+    export { default as TwebBlockPostTypeControl } from "@tigriweb/components/attributes/TwebBlockPostTypeControl";
+    export { default as TwebBlockPostTypeMultipleControl } from "@tigriweb/components/attributes/TwebBlockPostTypeMultipleControl";
+    export { default as TwebBlockRadioControl } from "@tigriweb/components/attributes/TwebBlockRadioControl";
+    export { default as TwebBlockRangeControl } from "@tigriweb/components/attributes/TwebBlockRangeControl";
+    export { default as TwebBlockSelectControl } from "@tigriweb/components/attributes/TwebBlockSelectControl";
+    export { default as TwebBlockTaxonomyControl } from "@tigriweb/components/attributes/TwebBlockTaxonomyControl";
+    export { default as TwebBlockTaxonomySelectControl } from "@tigriweb/components/attributes/TwebBlockTaxonomySelectControl";
+    export { default as TwebBlockTextareaControl } from "@tigriweb/components/attributes/TwebBlockTextareaControl";
+    export { default as TwebBlockTextControl } from "@tigriweb/components/attributes/TwebBlockTextControl";
+    export { default as TwebBlockToggleControl } from "@tigriweb/components/attributes/TwebBlockToggleControl";
+    export { default as TwebBlockColorGradientControl } from "@tigriweb/components/attributes/TwebBlockColorGradientControl";
+    export { default as TwebToolbarButton } from "@tigriweb/components/attributes/TwebToolbarButton";
+    export { default as TwebToolbarGroup } from "@tigriweb/components/attributes/TwebToolbarGroup";
 }
-declare module "@tweb/components/controls/TwebBlockAppenderButton" {
+declare module "@tigriweb/components/controls/TwebBlockAppenderButton" {
     export default TwebBlockAppenderButton;
     function TwebBlockAppenderButton({ className, label, labelText, clientId }: {
         className: any;
@@ -246,7 +246,7 @@ declare module "@tweb/components/controls/TwebBlockAppenderButton" {
         clientId: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/controls/TwebBlockDraggableSpots" {
+declare module "@tigriweb/components/controls/TwebBlockDraggableSpots" {
     export default TwebBlockDraggableSpots;
     function TwebBlockDraggableSpots({ name, attributes, setAttributes }: {
         name: any;
@@ -254,7 +254,7 @@ declare module "@tweb/components/controls/TwebBlockDraggableSpots" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/controls/TwebBlockMedia" {
+declare module "@tigriweb/components/controls/TwebBlockMedia" {
     export default TwebBlockMedia;
     function TwebBlockMedia({ name, size, value, onSelect, customUrl, attributes, setAttributes }: {
         name: any;
@@ -271,7 +271,7 @@ declare module "@tweb/components/controls/TwebBlockMedia" {
         }): import("react").JSX.Element;
     }
 }
-declare module "@tweb/components/controls/TwebBlockRichHeading" {
+declare module "@tigriweb/components/controls/TwebBlockRichHeading" {
     export default TwebBlockRichHeading;
     function TwebBlockRichHeading({ className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes }: {
         className: any;
@@ -290,7 +290,7 @@ declare module "@tweb/components/controls/TwebBlockRichHeading" {
         }): import("react").JSX.Element;
     }
 }
-declare module "@tweb/components/controls/TwebBlockRichText" {
+declare module "@tigriweb/components/controls/TwebBlockRichText" {
     export default TwebBlockRichText;
     function TwebBlockRichText({ tagName, className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes }: {
         tagName: any;
@@ -311,7 +311,7 @@ declare module "@tweb/components/controls/TwebBlockRichText" {
         }): import("react").JSX.Element;
     }
 }
-declare module "@tweb/components/controls/TwebBlockRingText" {
+declare module "@tigriweb/components/controls/TwebBlockRingText" {
     export default TwebBlockRingText;
     function TwebBlockRingText({ className, name, attributes, setAttributes }: {
         className: any;
@@ -326,81 +326,81 @@ declare module "@tweb/components/controls/TwebBlockRingText" {
         }): import("react").JSX.Element;
     }
 }
-declare module "@tweb/components/controls" {
-    export { default as TwebBlockAppenderButton } from "./TwebBlockAppenderButton";
-    export { default as TwebBlockDraggableSpots } from "./TwebBlockDraggableSpots";
-    export { default as TwebBlockMedia } from "./TwebBlockMedia";
-    export { default as TwebBlockRichHeading } from "./TwebBlockRichHeading";
-    export { default as TwebBlockRichText } from "./TwebBlockRichText";
-    export { default as TwebBlockRingText } from "./TwebBlockRingText";
+declare module "@tigriweb/components/controls" {
+    export { default as TwebBlockAppenderButton } from "@tigriweb/components/controls/TwebBlockAppenderButton";
+    export { default as TwebBlockDraggableSpots } from "@tigriweb/components/controls/TwebBlockDraggableSpots";
+    export { default as TwebBlockMedia } from "@tigriweb/components/controls/TwebBlockMedia";
+    export { default as TwebBlockRichHeading } from "@tigriweb/components/controls/TwebBlockRichHeading";
+    export { default as TwebBlockRichText } from "@tigriweb/components/controls/TwebBlockRichText";
+    export { default as TwebBlockRingText } from "@tigriweb/components/controls/TwebBlockRingText";
 }
-declare module "@tweb/components/meta/TwebMetaCheckboxControl" {
+declare module "@tigriweb/components/meta/TwebMetaCheckboxControl" {
     export default TwebMetaCheckboxControl;
     const TwebMetaCheckboxControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaColorControl" {
+declare module "@tigriweb/components/meta/TwebMetaColorControl" {
     export default TwebMetaColorControl;
     const TwebMetaColorControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaHtmlControl" {
+declare module "@tigriweb/components/meta/TwebMetaHtmlControl" {
     export default TwebMetaHtmlControl;
     function TwebMetaHtmlControl({ label, help }: {
         label: any;
         help: any;
     }): import("react").JSX.Element;
 }
-declare module "@tweb/components/meta/TwebMetaIconControl" {
+declare module "@tigriweb/components/meta/TwebMetaIconControl" {
     export default TwebMetaIconControl;
     const TwebMetaIconControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaMediaControl" {
+declare module "@tigriweb/components/meta/TwebMetaMediaControl" {
     export default TwebMetaMediaControl;
     const TwebMetaMediaControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaPostTypeControl" {
+declare module "@tigriweb/components/meta/TwebMetaPostTypeControl" {
     export default TwebMetaPostTypeControl;
     const TwebMetaPostTypeControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaRadioControl" {
+declare module "@tigriweb/components/meta/TwebMetaRadioControl" {
     export default TwebMetaRadioControl;
     const TwebMetaRadioControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaRangeControl" {
+declare module "@tigriweb/components/meta/TwebMetaRangeControl" {
     export default TwebMetaRangeControl;
     const TwebMetaRangeControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaSelectControl" {
+declare module "@tigriweb/components/meta/TwebMetaSelectControl" {
     export default TwebMetaSelectControl;
     const TwebMetaSelectControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaTaxonomyControl" {
+declare module "@tigriweb/components/meta/TwebMetaTaxonomyControl" {
     export default TwebMetaTaxonomyControl;
     const TwebMetaTaxonomyControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaTextControl" {
+declare module "@tigriweb/components/meta/TwebMetaTextControl" {
     export default TwebMetaTextControl;
     const TwebMetaTextControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaTextareaControl" {
+declare module "@tigriweb/components/meta/TwebMetaTextareaControl" {
     export default TwebMetaTextareaControl;
     const TwebMetaTextareaControl: any;
 }
-declare module "@tweb/components/meta/TwebMetaToggleControl" {
+declare module "@tigriweb/components/meta/TwebMetaToggleControl" {
     export default TwebMetaToggleControl;
     const TwebMetaToggleControl: any;
 }
-declare module "@tweb/components/meta" {
-    export { default as TwebMetaCheckboxControl } from "./TwebMetaCheckboxControl";
-    export { default as TwebMetaColorControl } from "./TwebMetaColorControl";
-    export { default as TwebMetaHtmlControl } from "./TwebMetaHtmlControl";
-    export { default as TwebMetaIconControl } from "./TwebMetaIconControl";
-    export { default as TwebMetaMediaControl } from "./TwebMetaMediaControl";
-    export { default as TwebMetaPostTypeControl } from "./TwebMetaPostTypeControl";
-    export { default as TwebMetaRadioControl } from "./TwebMetaRadioControl";
-    export { default as TwebMetaRangeControl } from "./TwebMetaRangeControl";
-    export { default as TwebMetaSelectControl } from "./TwebMetaSelectControl";
-    export { default as TwebMetaTaxonomyControl } from "./TwebMetaTaxonomyControl";
-    export { default as TwebMetaTextareaControl } from "./TwebMetaTextareaControl";
-    export { default as TwebMetaTextControl } from "./TwebMetaTextControl";
-    export { default as TwebMetaToggleControl } from "./TwebMetaToggleControl";
+declare module "@tigriweb/components/meta" {
+    export { default as TwebMetaCheckboxControl } from "@tigriweb/components/meta/TwebMetaCheckboxControl";
+    export { default as TwebMetaColorControl } from "@tigriweb/components/meta/TwebMetaColorControl";
+    export { default as TwebMetaHtmlControl } from "@tigriweb/components/meta/TwebMetaHtmlControl";
+    export { default as TwebMetaIconControl } from "@tigriweb/components/meta/TwebMetaIconControl";
+    export { default as TwebMetaMediaControl } from "@tigriweb/components/meta/TwebMetaMediaControl";
+    export { default as TwebMetaPostTypeControl } from "@tigriweb/components/meta/TwebMetaPostTypeControl";
+    export { default as TwebMetaRadioControl } from "@tigriweb/components/meta/TwebMetaRadioControl";
+    export { default as TwebMetaRangeControl } from "@tigriweb/components/meta/TwebMetaRangeControl";
+    export { default as TwebMetaSelectControl } from "@tigriweb/components/meta/TwebMetaSelectControl";
+    export { default as TwebMetaTaxonomyControl } from "@tigriweb/components/meta/TwebMetaTaxonomyControl";
+    export { default as TwebMetaTextareaControl } from "@tigriweb/components/meta/TwebMetaTextareaControl";
+    export { default as TwebMetaTextControl } from "@tigriweb/components/meta/TwebMetaTextControl";
+    export { default as TwebMetaToggleControl } from "@tigriweb/components/meta/TwebMetaToggleControl";
 }
