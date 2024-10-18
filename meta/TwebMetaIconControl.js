@@ -1,4 +1,4 @@
-/* global twebCoreIcons */
+/* global twebIcons */
 
 import {
 	__,
@@ -58,7 +58,7 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 
 	useEffect(() => {
 		const chunks   = [];
-		const iconKeys = Object.keys(twebCoreIcons);
+		const iconKeys = Object.keys(twebIcons);
 
 		for (let icon = 0; icon < iconKeys.length; icon += iconsPerPage) {
 			chunks.push(iconKeys.slice(icon, icon + iconsPerPage));
@@ -85,7 +85,7 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 						}}
 					>
 						<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} strokeWidth={1.5} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-							<Path d={twebCoreIcons[icon]} />
+							<Path d={twebIcons[icon]} />
 						</SVG>
 					</Button>
 				));
