@@ -1,4 +1,4 @@
-const twebGetTextFromArray = function (textData, metaValue) {
+const twebGetTextFromArray = (textData, metaValue) => {
 	let text;
 
 	if (Array.isArray(textData)) {

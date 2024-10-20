@@ -1,5 +1,5 @@
 'use strict';
-/* global twebCoreVars */
+/* global twebVars */
 
 import {
 	__,
@@ -25,7 +25,7 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 
 	useEffect(() => {
 		if (attributes[name]) {
-			fetch(`${twebCoreVars.restApiUrl}media/${attributes[name]}`)
+			fetch(`${twebVars.restApiUrl}media/${attributes[name]}`)
 				.then(response => response.json())
 				.then(data => {
 					const imageURL = data.media_details.sizes.medium ? data.media_details.sizes.medium.source_url : data.source_url;
@@ -86,7 +86,7 @@ TwebBlockMediaControl.Render = ({ mediaId = 0, isBackground = false, className =
 
 	useEffect(() => {
 		if (mediaId) {
-			fetch(`${twebCoreVars.restApiUrl}media/${mediaId}`)
+			fetch(`${twebVars.restApiUrl}media/${mediaId}`)
 				.then(response => response.json())
 				.then(media => {
 					setMedia(media);

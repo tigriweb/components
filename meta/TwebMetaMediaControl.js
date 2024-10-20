@@ -1,5 +1,5 @@
 'use strict';
-/* global twebCoreVars */
+/* global twebVars */
 
 import {
 	__,
@@ -29,7 +29,7 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 
 	useEffect(() => {
 		if (metaValue) {
-			fetch(`${twebCoreVars.restApiUrl}media/${metaValue}`)
+			fetch(`${twebVars.restApiUrl}media/${metaValue}`)
 				.then(response => response.json())
 				.then(data => {
 					const tempData = {};

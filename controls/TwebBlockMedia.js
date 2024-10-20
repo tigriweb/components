@@ -1,5 +1,5 @@
 'use strict';
-/* global twebCoreVars */
+/* global twebVars */
 
 import {
 	useState,
@@ -33,7 +33,7 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 
 	useEffect(() => {
 		if (imageId) {
-			fetch(`${twebCoreVars.restApiUrl}media/${imageId}`)
+			fetch(`${twebVars.restApiUrl}media/${imageId}`)
 				.then(response => response.json())
 				.then(data => {
 					const mediaData = {

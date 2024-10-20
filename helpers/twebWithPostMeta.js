@@ -18,7 +18,7 @@ import {
 
 const twebWithPostMeta = (WrappedComponent) => {
 	return (props) => {
-		const { metaKey, isNewProductEditor } = props;
+		const { metaKey, isNewProductEditor, defaultValue } = props;
 
 		// New WooCommerce Product Editor
 		if (isNewProductEditor) {
@@ -44,7 +44,7 @@ const twebWithPostMeta = (WrappedComponent) => {
 				[ metadata, metaKey, metadataItem ]
 			);
 
-			const metaValue = metadataItem?.value ?? '';
+			const metaValue = metadataItem?.value ?? defaultValue;
 
 			return (
 				<WrappedComponent

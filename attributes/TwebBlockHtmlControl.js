@@ -1,18 +1,18 @@
 import {
 	BaseControl,
-	CardDivider,
 } from '@wordpress/components';
+
+import {
+	twebSanitizeHTML
+} from './../helpers';
 
 const TwebBlockHtmlControl = ({ label, help }) => {
 	return (
-		<>
-			<CardDivider />
-			<BaseControl
-				label={ label }
-				help={ help }
-			/>
-			<CardDivider />
-		</>
+		<BaseControl label={ label } >
+			<div dangerouslySetInnerHTML={{
+				__html: twebSanitizeHTML( help )
+			}} />
+		</BaseControl>
 	);
 };
 
