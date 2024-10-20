@@ -21,6 +21,23 @@ declare module "@tigriweb/components/attributes/TwebBlockColorGradientControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
+declare module "@tigriweb/components/helpers/twebGetTextFromArray" {
+    export default twebGetTextFromArray;
+    function twebGetTextFromArray(textData: any, metaValue: any): any;
+}
+declare module "@tigriweb/components/helpers/twebSanitizeHTML" {
+    export default twebSanitizeHTML;
+    function twebSanitizeHTML(html: any): any;
+}
+declare module "@tigriweb/components/helpers/twebWithPostMeta" {
+    export default twebWithPostMeta;
+    function twebWithPostMeta(WrappedComponent: any): (props: any) => any;
+}
+declare module "@tigriweb/components/helpers" {
+    export { default as twebGetTextFromArray } from "@tigriweb/components/helpers/twebGetTextFromArray";
+    export { default as twebSanitizeHTML } from "@tigriweb/components/helpers/twebSanitizeHTML";
+    export { default as twebWithPostMeta } from "@tigriweb/components/helpers/twebWithPostMeta";
+}
 declare module "@tigriweb/components/attributes/TwebBlockHtmlControl" {
     export default TwebBlockHtmlControl;
     function TwebBlockHtmlControl({ label, help }: {
@@ -174,18 +191,6 @@ declare module "@tigriweb/components/attributes/TwebBlockTextareaControl" {
         setAttributes: any;
     }): import("react").JSX.Element;
 }
-declare module "@tigriweb/components/helpers/twebWithPostMeta" {
-    export default twebWithPostMeta;
-    function twebWithPostMeta(WrappedComponent: any): any;
-}
-declare module "@tigriweb/components/helpers/twebGetTextFromArray" {
-    export default twebGetTextFromArray;
-    function twebGetTextFromArray(textData: any, metaValue: any): any;
-}
-declare module "@tigriweb/components/helpers" {
-    export { default as twebWithPostMeta } from "@tigriweb/components/helpers/twebWithPostMeta";
-    export { default as twebGetTextFromArray } from "@tigriweb/components/helpers/twebGetTextFromArray";
-}
 declare module "@tigriweb/components/attributes/TwebBlockToggleControl" {
     export default TwebBlockToggleControl;
     function TwebBlockToggleControl({ label, help, name, onChange, attributes, setAttributes }: {
@@ -336,11 +341,11 @@ declare module "@tigriweb/components/controls" {
 }
 declare module "@tigriweb/components/meta/TwebMetaCheckboxControl" {
     export default TwebMetaCheckboxControl;
-    const TwebMetaCheckboxControl: any;
+    const TwebMetaCheckboxControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaColorControl" {
     export default TwebMetaColorControl;
-    const TwebMetaColorControl: any;
+    const TwebMetaColorControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaHtmlControl" {
     export default TwebMetaHtmlControl;
@@ -351,43 +356,43 @@ declare module "@tigriweb/components/meta/TwebMetaHtmlControl" {
 }
 declare module "@tigriweb/components/meta/TwebMetaIconControl" {
     export default TwebMetaIconControl;
-    const TwebMetaIconControl: any;
+    const TwebMetaIconControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaMediaControl" {
     export default TwebMetaMediaControl;
-    const TwebMetaMediaControl: any;
+    const TwebMetaMediaControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaPostTypeControl" {
     export default TwebMetaPostTypeControl;
-    const TwebMetaPostTypeControl: any;
+    const TwebMetaPostTypeControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaRadioControl" {
     export default TwebMetaRadioControl;
-    const TwebMetaRadioControl: any;
+    const TwebMetaRadioControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaRangeControl" {
     export default TwebMetaRangeControl;
-    const TwebMetaRangeControl: any;
+    const TwebMetaRangeControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaSelectControl" {
     export default TwebMetaSelectControl;
-    const TwebMetaSelectControl: any;
+    const TwebMetaSelectControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaTaxonomyControl" {
     export default TwebMetaTaxonomyControl;
-    const TwebMetaTaxonomyControl: any;
+    const TwebMetaTaxonomyControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaTextControl" {
     export default TwebMetaTextControl;
-    const TwebMetaTextControl: any;
+    const TwebMetaTextControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaTextareaControl" {
     export default TwebMetaTextareaControl;
-    const TwebMetaTextareaControl: any;
+    const TwebMetaTextareaControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta/TwebMetaToggleControl" {
     export default TwebMetaToggleControl;
-    const TwebMetaToggleControl: any;
+    const TwebMetaToggleControl: (props: any) => any;
 }
 declare module "@tigriweb/components/meta" {
     export { default as TwebMetaCheckboxControl } from "@tigriweb/components/meta/TwebMetaCheckboxControl";
