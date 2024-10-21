@@ -14,7 +14,7 @@ import {
 const TwebBlockRingText = ({ className, name, attributes, setAttributes }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const buttonText = attributes[name].text ? attributes[name].text : __('Ring Button', 'tweb-core');
+	const buttonText = attributes[name].text ? attributes[name].text : __('Ring Button', 'tweb');
 	const buttonLink = attributes[name].link ? attributes[name].link : '#';
 
 	return (
@@ -55,7 +55,7 @@ const TwebBlockRingText = ({ className, name, attributes, setAttributes }) => {
 						width: '350px',
 					}}>
 						<TextControl
-							label={ __('Text', 'tweb-core') }
+							label={ __('Text', 'tweb') }
 							value={ attributes[name].text }
 							onChange={ (value => {
 								setAttributes({
@@ -67,7 +67,7 @@ const TwebBlockRingText = ({ className, name, attributes, setAttributes }) => {
 							}) }
 						/>
 						<TextControl
-							label={ __('URL', 'tweb-core') }
+							label={ __('URL', 'tweb') }
 							value={ attributes[name].link }
 							onChange={ (value => {
 								setAttributes({
@@ -86,7 +86,7 @@ const TwebBlockRingText = ({ className, name, attributes, setAttributes }) => {
 };
 
 TwebBlockRingText.Content = ({ className, value }) => {
-	const buttonText = value.text ? value.text : __('Ring Button', 'tweb-core');
+	const buttonText = value.text ? value.text : __('Ring Button', 'tweb');
 	const buttonLink = value.link ? value.link : '#';
 
 	return (

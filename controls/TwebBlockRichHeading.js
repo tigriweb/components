@@ -44,7 +44,7 @@ const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, plac
 						{ toolbarItemHTMLProps => (
 							<DropdownMenu
 								icon={ level ? headingLevels.find(item => item.value === level).icon : headingLevels[0].icon }
-								label={ __('Heading', 'tweb-core') }
+								label={ __('Heading', 'tweb') }
 								toggleProps={ toolbarItemHTMLProps }
 								controls={ headingLevels.map(data => ({
 									icon: data?.icon,

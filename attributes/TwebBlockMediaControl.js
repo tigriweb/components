@@ -56,7 +56,7 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 								[name]: 0,
 							});
 						}}>
-						{ __('Remove Image', 'tweb-core') }
+						{ __('Remove Image', 'tweb') }
 					</Button>
 				</div>
 			) : (
@@ -66,7 +66,7 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 						value={ attributes[name] }
 						render={ ({ open }) => (
 							<Button className="components-button editor-post-featured-image__toggle" onClick={open}>
-								{__('Open Media Library', 'tweb-core')}
+								{__('Open Media Library', 'tweb')}
 							</Button>
 						) }
 						onSelect={ onSelect || (value => {

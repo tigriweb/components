@@ -122,7 +122,7 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 								setSelectedIcon(false);
 								setMetaValue(false);
 							}}>
-							{__('Remove Icon', 'tweb-core')}
+							{__('Remove Icon', 'tweb')}
 						</Button>
 					)}
 				</div>
@@ -130,7 +130,7 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 					<div className="tweb-icon-component__search">
 						<input
 							type="text"
-							placeholder={__('Search Icon', 'tweb-core')}
+							placeholder={__('Search Icon', 'tweb')}
 							onChange={twebFilterIcons}
 						/>
 					</div>

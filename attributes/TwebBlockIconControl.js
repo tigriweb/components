@@ -122,7 +122,7 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 									[name]: '',
 								});
 							}}>
-							{__('Remove Icon', 'tweb-core')}
+							{__('Remove Icon', 'tweb')}
 						</Button>
 					)}
 				</div>
@@ -130,7 +130,7 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 					<div className="tweb-icon-component__search">
 						<input
 							type="text"
-							placeholder={__('Search Icon', 'tweb-core')}
+							placeholder={__('Search Icon', 'tweb')}
 							onChange={twebFilterIcons}
 						/>
 					</div>

@@ -67,7 +67,7 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 					<Button className="components-button is-link is-destructive" onClick={ () => {
 						setMediaData('');
 						setMetaValue(0);
-					}}>{ __('Remove Media', 'tweb-core') }</Button>
+					}}>{ __('Remove Media', 'tweb') }</Button>
 				</div>
 			) : (
 				<MediaUploadCheck>
@@ -75,7 +75,7 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 						value={metaValue}
 						render={({ open }) => (
 							<Button className="components-button editor-post-featured-image__toggle" onClick={open}>
-								{__('Open Media Library', 'tweb-core')}
+								{__('Open Media Library', 'tweb')}
 							</Button>
 						)}
 						onSelect={value => {
