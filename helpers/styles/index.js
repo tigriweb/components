@@ -1,2 +1,2 @@
-export { default as TwebIconStyledComponent } from './TwebIconStyledComponent';
-export { default as TwebMediaStyledComponent } from './TwebMediaStyledComponent';
+export { default as twebIconStyles } from './twebIconStyles';
+export { default as twebMediaStyles } from './twebMediaStyles';

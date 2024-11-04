@@ -1,9 +1,7 @@
 declare module '@tigriweb/components/helpers/styles' {
-	export const TwebIconStyledComponent: (props: {
-		className?: string;
-	}) => React.JSX.Element;
+	const twebIconStyles: string;
+	export default twebIconStyles;
 
-	export const TwebMediaStyledComponent: (props: {
-		className?: string;
-	}) => React.JSX.Element;
+	const twebMediaStyles: string;
+	export default twebMediaStyles;
 }

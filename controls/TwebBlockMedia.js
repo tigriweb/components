@@ -26,9 +26,18 @@ import {
 
 import apiFetch from '@wordpress/api-fetch';
 
+// Styles
+import styled from '@emotion/styled';
+
 import {
-	TwebMediaStyledComponent,
+	twebMediaStyles,
 } from './../helpers/styles';
+
+import {
+	useStyleOverride
+} from '@wordpress/block-editor';
+
+const TwebMediaStyledComponent = styled.div( twebMediaStyles );
 
 const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, setAttributes }) => {
 	const [mediaData, setMediaData] = useState(null);
@@ -63,92 +72,99 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 		}
 	}, [imageId]);
 
-	return (
-		<TwebMediaStyledComponent className="tweb-media-component">
-			{mediaData && (
-				<>
-					<div className="tweb-media-component__image">
-						<img src={mediaData.url} alt={mediaData.alt} />
-					</div>
-					<Button
-						className="tweb-media-component__remove"
-						label={ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }
-						showTooltip={ true }
-						onClick={ () => {
-							setMediaData('');
-							setAttributes({
-								[name]: {},
-							});
-						}}>
-						<Icon icon={ close } />
-					</Button>
-					{customUrl && (
-						<>
-							<Button
-								className="tweb-media-component__link"
-								label={ (typeof twebI18n !== 'undefined' && twebI18n.editLink) || 'Edit Link' }
-								showTooltip={ true }
-								onClick={() => setPopoverOpen(!popoverOpen)}
-							>
-								<Icon icon={link} />
-							</Button>
-							{popoverOpen && (
-								<Popover
-									position="top right"
-									onClose={() => setPopoverOpen(false)}
-								>
-									<LinkControl
-										value={ attributes[name].customUrl }
-										onChange={
-											newUrl => setAttributes({
-												[name]: {
-													...attributes[name],
-													customUrl: newUrl,
-												},
-											})
-										}
-									/>
-								</Popover>
-							)}
-						</>
-					)}
-				</>
-			)}
+	useStyleOverride( {
+		id: 'components-tweb-media',
+		css: twebMediaStyles.styles
+	} );
 
-			{attributes?.[name]?.preview ? (
-				<div className="tweb-media-component__image">
-					<img src={attributes[name].preview} />
-				</div>
-			) : (
-				<MediaUploadCheck>
-					<MediaUpload
-						allowedTypes={['image']}
-						value={imageId}
-						render={({ open }) => (
-							<Button
-								className={mediaData ? 'tweb-media-component__toggle' : 'tweb-media-component__bg' }
-								label={ (typeof twebI18n !== 'undefined' && twebI18n.toggleMedia) || 'Toggle Media' }
-								showTooltip={ true }
-								onClick={open}
-							>
-								<Icon icon={mediaData ? edit : media } />
-							</Button>
+	return (
+		<TwebMediaStyledComponent className="components-base-control components-tweb-media">
+			<div className="components-tweb-media-field">
+				{mediaData && (
+					<>
+						<div className="components-tweb-media-field__image">
+							<img src={mediaData.url} alt={mediaData.alt} />
+						</div>
+						<Button
+							className="components-tweb-media-field__button components-tweb-media-field__remove"
+							label={ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }
+							showTooltip={ true }
+							onClick={ () => {
+								setMediaData('');
+								setAttributes({
+									[name]: {},
+								});
+							}}>
+							<Icon icon={ close } />
+						</Button>
+						{customUrl && (
+							<>
+								<Button
+									className="components-tweb-media-field__button components-tweb-media-field__link"
+									label={ (typeof twebI18n !== 'undefined' && twebI18n.editLink) || 'Edit Link' }
+									showTooltip={ true }
+									onClick={() => setPopoverOpen(!popoverOpen)}
+								>
+									<Icon icon={link} />
+								</Button>
+								{popoverOpen && (
+									<Popover
+										position="top right"
+										onClose={() => setPopoverOpen(false)}
+									>
+										<LinkControl
+											value={ attributes[name].customUrl }
+											onChange={
+												newUrl => setAttributes({
+													[name]: {
+														...attributes[name],
+														customUrl: newUrl,
+													},
+												})
+											}
+										/>
+									</Popover>
+								)}
+							</>
 						)}
-						onSelect={onSelect || (value => {
-							setAttributes({
-								[name]: {
-									id: value.id,
-									alt: value.alt ?? '',
-									url: value.sizes[size] ? value.sizes[size].url : value.url,
-									customUrl: attributes[name].customUrl,
-									width: value.sizes[size] ? value.sizes[size].width : value.width,
-									height: value.sizes[size] ? value.sizes[size].height : value.height,
-								},
-							});
-						})}
-					/>
-				</MediaUploadCheck>
-			)}
+					</>
+				)}
+
+				{attributes?.[name]?.preview ? (
+					<div className="components-tweb-media-field__image">
+						<img src={attributes[name].preview} />
+					</div>
+				) : (
+					<MediaUploadCheck>
+						<MediaUpload
+							allowedTypes={['image']}
+							value={imageId}
+							render={({ open }) => (
+								<Button
+									className={mediaData ? 'components-tweb-media-field__button components-tweb-media-field__toggle' : 'components-tweb-media-field__bg' }
+									label={ (typeof twebI18n !== 'undefined' && twebI18n.toggleMedia) || 'Toggle Media' }
+									showTooltip={ true }
+									onClick={open}
+								>
+									<Icon icon={mediaData ? edit : media } />
+								</Button>
+							)}
+							onSelect={onSelect || (value => {
+								setAttributes({
+									[name]: {
+										id: value.id,
+										alt: value.alt ?? '',
+										url: value.sizes[size] ? value.sizes[size].url : value.url,
+										customUrl: attributes[name].customUrl,
+										width: value.sizes[size] ? value.sizes[size].width : value.width,
+										height: value.sizes[size] ? value.sizes[size].height : value.height,
+									},
+								});
+							})}
+						/>
+					</MediaUploadCheck>
+				)}
+			</div>
 		</TwebMediaStyledComponent>
 	);
 };

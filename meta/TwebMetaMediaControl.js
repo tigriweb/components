@@ -21,9 +21,18 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
+// Styles
+import styled from '@emotion/styled';
+
 import {
-	TwebMediaStyledComponent,
+	twebMediaStyles,
 } from './../helpers/styles';
+
+import {
+	useStyleOverride
+} from '@wordpress/block-editor';
+
+const TwebMediaStyledComponent = styled.div( twebMediaStyles );
 
 const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	const [mediaData, setMediaData] = useState();
@@ -47,6 +56,11 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 		}
 	}, [metaValue]);
 
+	useStyleOverride( {
+		id: 'components-tweb-media',
+		css: twebMediaStyles.styles
+	} );
+
 	return (
 		<BaseControl
 			label={label}
@@ -56,9 +70,11 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 				<div className="editor-post-featured-image">
 					<div className="editor-post-featured-image__container">
 						{mediaData.title ? (
-							<TwebMediaStyledComponent className="tweb-media-component--file">
-								<span className={ `dashicons dashicons-media-${mediaData.icon} components-panel__icon` }></span>
-								<span>{ mediaData.title }</span>
+							<TwebMediaStyledComponent className="components-base-control components-tweb-media">
+								<div className="components-tweb-media-field--file">
+									<span className={ `dashicons dashicons-media-${mediaData.icon} components-tweb-media-field--file__icon` }></span>
+									<span className="components-tweb-media-field--file__title">{ mediaData.title }</span>
+								</div>
 							</TwebMediaStyledComponent>
 						) : (
 							<img src={ mediaData.url } alt={ label } />

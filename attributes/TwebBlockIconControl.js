@@ -24,14 +24,23 @@ import {
 	TwebSVG,
 } from './../primitives';
 
+// Styles
+import styled from '@emotion/styled';
+
 import {
-	TwebIconStyledComponent,
+	twebIconStyles,
 } from './../helpers/styles';
+
+import {
+	useStyleOverride
+} from '@wordpress/block-editor';
+
+const TwebIconStyledComponent = styled.div( twebIconStyles );
 
 const twebFilterIcons = event => {
 	const searchText = event.target.value.toLowerCase();
 	const iconsNode  = event.target.parentNode.nextElementSibling;
-	const areaNodes  = iconsNode.querySelectorAll('.tweb-icon-component__icons');
+	const areaNodes  = iconsNode.querySelectorAll('.components-tweb-icon-field__icons');
 
 	areaNodes.forEach(areaNode => {
 		const buttons = areaNode.querySelectorAll('button[aria-label]');
@@ -111,42 +120,49 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 		return () => cancelAnimationFrame(requestId);
 	}, [isVisible, isLoading, iconChunks]);
 
+	useStyleOverride( {
+		id: 'components-tweb-icon',
+		css: twebIconStyles.styles
+	} );
+
 	return (
-		<BaseControl help={help}>
-			<TwebIconStyledComponent className="tweb-icon-component">
-				<div className="tweb-icon-component__header">
-					{label}:
-					<Button
-						variant="secondary"
-						onClick={() => {
-							setIsVisible(state => !state);
-						}}
-						icon={ <TwebSVG icon={ selectedIcon } /> }
-					/>
-					{selectedIcon && (
+		<BaseControl help={ help }>
+			<TwebIconStyledComponent className="components-base-control components-tweb-icon">
+				<div className="components-tweb-icon-field">
+					<div className="components-tweb-icon-field__header">
+						{label}:
 						<Button
-							className="components-button is-link is-destructive"
+							variant="secondary"
 							onClick={() => {
-								setSelectedIcon(false);
-								setAttributes({
-									[name]: '',
-								});
-							}}>
-							{(typeof twebI18n !== 'undefined' && twebI18n.removeIcon) || 'Remove Icon'}
-						</Button>
-					)}
-				</div>
-				<div className={`tweb-icon-component${isVisible ? '' : ' is-hidden'}`}>
-					<div className="tweb-icon-component__search">
-						<input
-							type="text"
-							placeholder={(typeof twebI18n !== 'undefined' && twebI18n.searchIcon) || 'Search Icon'}
-							onChange={twebFilterIcons}
+								setIsVisible(state => !state);
+							}}
+							icon={ <TwebSVG icon={ selectedIcon } /> }
 						/>
+						{selectedIcon && (
+							<Button
+								className="components-button is-link is-destructive"
+								onClick={() => {
+									setSelectedIcon(false);
+									setAttributes({
+										[name]: '',
+									});
+								}}>
+								{(typeof twebI18n !== 'undefined' && twebI18n.removeIcon) || 'Remove Icon'}
+							</Button>
+						)}
 					</div>
-					<div className="tweb-icon-component__content">
-						<div className="tweb-icon-component__icons">
-							{ iconButtons }
+					<div className={`components-tweb-icon-field${isVisible ? '' : ' is-hidden'}`}>
+						<div className="components-tweb-icon-field__search">
+							<input
+								type="text"
+								placeholder={(typeof twebI18n !== 'undefined' && twebI18n.searchIcon) || 'Search Icon'}
+								onChange={twebFilterIcons}
+							/>
+						</div>
+						<div className="components-tweb-icon-field__content">
+							<div className="components-tweb-icon-field__icons">
+								{ iconButtons }
+							</div>
 						</div>
 					</div>
 				</div>
