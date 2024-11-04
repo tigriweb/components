@@ -1,0 +1,27 @@
+{
+	"name": "@tigriweb/components",
+	"version": "1.0.32",
+	"description": "Gutenberg Components",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tigriweb/components.git"
+	},
+	"keywords": [
+		"gutenberg",
+		"react",
+		"component",
+		"wp",
+		"wordpress"
+	],
+	"author": "TigriWeb <tigriweb@gmail.com> (https://tigriweb.com)",
+	"license": "ISC",
+	"style": "assets/css/tweb-icon-component.css",
+	"bugs": {
+		"url": "https://github.com/tigriweb/components/issues"
+	},
+	"homepage": "https://github.com/tigriweb/components",
+	"dependencies": {
+		"@emotion/react": "^11.13.3",
+		"@emotion/styled": "^11.13.0"
+	}
+}
