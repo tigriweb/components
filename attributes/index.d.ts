@@ -8,6 +8,15 @@ declare module '@tigriweb/components/attributes' {
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;
 
+	export function TwebBlockColorControl(props: {
+		label: string;
+		help?: string;
+		name: string;
+		onChange?: (value: string | null) => void;
+		attributes: Record<string, any>;
+		setAttributes: (attributes: Record<string, any>) => void;
+	}): React.JSX.Element;
+
 	export function TwebBlockColorGradientControl(props: {
 		label: string;
 		nameColor: string;
