@@ -45,11 +45,14 @@ const twebMediaStyles = css`
 	width: 100%;
 }
 .components-tweb-media-field--file {
-	alignItems: center;
+	align-items: center;
 	background-color: var(--tweb-admin--bg-color);
 	display: flex;
-	marginBottom: 8px;
+	margin-bottom: 8px;
 	padding: 8px;
+}
+.components-tweb-media-field--image img {
+	max-width: 100%;
 }
 .components-tweb-media-field--file__icon {
 	font-size: 30px;
@@ -57,9 +60,13 @@ const twebMediaStyles = css`
 	margin-left: 0;
 	margin-right: 6px;
 	width: 30px;
+	min-width: 30px;
 }
 .components-tweb-media-field--file__title {
 	word-wrap: anywhere;
+}
+.dashicons-media-application:before {
+	content: "\\f497";
 }
 `;
 

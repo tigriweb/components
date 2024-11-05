@@ -32,10 +32,10 @@ import {
 } from './../helpers/styles';
 
 import {
-	useStyleOverride
+	useStyleOverride,
 } from '@wordpress/block-editor';
 
-const TwebIconStyledComponent = styled.div( twebIconStyles );
+const TwebIconStyledComponent = styled.div(twebIconStyles);
 
 const twebFilterIcons = event => {
 	const searchText = event.target.value.toLowerCase();
@@ -120,10 +120,9 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 		return () => cancelAnimationFrame(requestId);
 	}, [isVisible, isLoading, iconChunks]);
 
-	useStyleOverride( {
-		id: 'components-tweb-icon',
-		css: twebIconStyles.styles
-	} );
+	useStyleOverride({
+		css: twebIconStyles.styles,
+	});
 
 	return (
 		<BaseControl help={ help }>

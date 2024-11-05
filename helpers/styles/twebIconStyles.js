@@ -14,7 +14,7 @@ const twebIconStyles = css`
 	stroke: currentColor;
 	fill: none;
 	stroke-linecap: round;
-	stroke-lLinejoin: round;
+	stroke-linejoin: round;
 }
 .components-tweb-icon-field__header {
 	align-items: center;
