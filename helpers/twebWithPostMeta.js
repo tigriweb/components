@@ -49,9 +49,9 @@ const twebWithPostMeta = WrappedComponent => {
 
 			return (
 				<WrappedComponent
-					{...props}
-					metaValue={metaValue}
-					setMetaValue={setMetaValue}
+					{ ...props }
+					metaValue={ metaValue }
+					setMetaValue={ setMetaValue }
 				/>
 			);
 		}

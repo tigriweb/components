@@ -9,7 +9,7 @@ import {
 const TwebBlockColorControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
 	return (
 		<BaseControl
-			help={help}
+			help={ help }
 		>
 			<ColorPaletteControl
 				label={ label }

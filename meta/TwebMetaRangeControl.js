@@ -9,15 +9,15 @@ import {
 const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1, metaValue, setMetaValue }) => {
 	return (
 		<RangeControl
-			label={label}
-			help={help}
-			value={metaValue}
-			min={min}
-			max={max}
-			step={step || 1}
-			onChange={value => {
+			label={ label }
+			help={ help }
+			value={ metaValue }
+			min={ min }
+			max={ max }
+			step={ step || 1 }
+			onChange={ value => {
 				setMetaValue(value);
-			}}
+			} }
 		/>
 	);
 });

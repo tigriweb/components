@@ -11,10 +11,10 @@ const TwebBlockSelectControl = ({ label, help, choices, name, onChange, attribut
 		>
 			<SelectControl
 				value={ attributes[name] }
-				options={Object.entries(choices).map(([value, label]) => ({
+				options={ Object.entries(choices).map(([value, label]) => ({
 					value,
 					label,
-				}))}
+				})) }
 				onChange={ onChange || (value => {
 					setAttributes({
 						[name]: value,

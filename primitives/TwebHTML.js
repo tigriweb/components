@@ -9,9 +9,9 @@ import {
 const TwebHTML = ({ label, help }) => {
 	return (
 		<BaseControl label={ label } >
-			<div dangerouslySetInnerHTML={{
+			<div dangerouslySetInnerHTML={ {
 				__html: twebSanitizeHTML(help),
-			}} />
+			} } />
 		</BaseControl>
 	);
 };

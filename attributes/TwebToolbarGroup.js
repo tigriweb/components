@@ -19,7 +19,7 @@ const TwebToolbarGroup = ({ label, groupData, name, attributes, setAttributes })
 						icon={ value ? groupData.find(item => item.value === value).icon : groupData[0].icon }
 						label={ label }
 						toggleProps={ toolbarItemHTMLProps }
-						controls={groupData.map(data => ({
+						controls={ groupData.map(data => ({
 							icon: data?.icon,
 							title: data?.title,
 							label: data?.label,
@@ -31,7 +31,7 @@ const TwebToolbarGroup = ({ label, groupData, name, attributes, setAttributes })
 									[name]: data.value,
 								});
 							},
-						}))}
+						})) }
 					/>
 				) }
 			</ToolbarItem>

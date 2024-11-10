@@ -67,7 +67,7 @@ const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, plac
 											},
 										});
 									},
-								}))}
+								})) }
 							/>
 						) }
 					</ToolbarItem>

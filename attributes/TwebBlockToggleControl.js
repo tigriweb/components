@@ -12,11 +12,11 @@ const TwebBlockToggleControl = ({ label, help, name, onChange, attributes, setAt
 			label={ twebGetTextFromArray(label, attributes[name]) }
 			help={ twebGetTextFromArray(help, attributes[name]) }
 			checked={ attributes[name] }
-			onChange={onChange || (value => {
+			onChange={ onChange || (value => {
 				setAttributes({
 					[name]: value,
 				});
-			})}
+			}) }
 		/>
 	);
 };

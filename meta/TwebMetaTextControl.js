@@ -9,13 +9,13 @@ import {
 const TwebMetaTextControl = twebWithPostMeta(({ label, help, type, metaValue, setMetaValue }) => {
 	return (
 		<TextControl
-			label={label}
-			help={help}
-			type={type}
-			value={metaValue}
-			onChange={value => {
+			label={ label }
+			help={ help }
+			type={ type }
+			value={ metaValue }
+			onChange={ value => {
 				setMetaValue(value);
-			}}
+			} }
 		/>
 	);
 });

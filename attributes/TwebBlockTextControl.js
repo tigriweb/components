@@ -12,7 +12,7 @@ const TwebBlockTextControl = ({ label, help, name, onChange, attributes, setAttr
 				setAttributes({
 					[name]: value,
 				});
-			})}
+			}) }
 		/>
 	);
 };

@@ -12,10 +12,10 @@ const TwebMetaToggleControl = twebWithPostMeta(({ label, help, metaValue, setMet
 		<ToggleControl
 			label={ twebGetTextFromArray(label, metaValue) }
 			help={ twebGetTextFromArray(help, metaValue) }
-			checked={metaValue}
-			onChange={value => {
+			checked={ metaValue }
+			onChange={ value => {
 				setMetaValue(value);
-			}}
+			} }
 		/>
 	);
 });

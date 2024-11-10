@@ -14,7 +14,7 @@ const TwebToolbarButton = ({ label, icon, name, onClick, attributes, setAttribut
 					setAttributes({
 						[name]: ! attributes[name],
 					});
-				})}
+				}) }
 				isActive={ attributes[name] }
 			/>
 		</ToolbarGroup>

@@ -90,7 +90,7 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 								setAttributes({
 									[name]: {},
 								});
-							}}>
+							} }>
 							<Icon icon={ close } />
 						</Button>
 						{customUrl && (
@@ -99,14 +99,14 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 									className="components-tweb-media-field__button components-tweb-media-field__link"
 									label={ (typeof twebI18n !== 'undefined' && twebI18n.editLink) || 'Edit Link' }
 									showTooltip={ true }
-									onClick={() => setPopoverOpen(!popoverOpen)}
+									onClick={ () => setPopoverOpen(!popoverOpen) }
 								>
-									<Icon icon={link} />
+									<Icon icon={ link } />
 								</Button>
 								{popoverOpen && (
 									<Popover
 										position="top right"
-										onClose={() => setPopoverOpen(false)}
+										onClose={ () => setPopoverOpen(false) }
 									>
 										<LinkControl
 											value={ attributes[name].customUrl }
@@ -135,17 +135,17 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 						<MediaUpload
 							allowedTypes={ ['image'] }
 							value={ imageId }
-							render={({ open }) => (
+							render={ ({ open }) => (
 								<Button
-									className={mediaData ? 'components-tweb-media-field__button components-tweb-media-field__toggle' : 'components-tweb-media-field__bg' }
+									className={ mediaData ? 'components-tweb-media-field__button components-tweb-media-field__toggle' : 'components-tweb-media-field__bg' }
 									label={ (typeof twebI18n !== 'undefined' && twebI18n.toggleMedia) || 'Toggle Media' }
 									showTooltip={ true }
-									onClick={open}
+									onClick={ open }
 								>
-									<Icon icon={mediaData ? edit : media } />
+									<Icon icon={ mediaData ? edit : media } />
 								</Button>
-							)}
-							onSelect={onSelect || (value => {
+							) }
+							onSelect={ onSelect || (value => {
 								setAttributes({
 									[name]: {
 										id: value.id,
@@ -156,7 +156,7 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 										height: value.sizes[size] ? value.sizes[size].height : value.height,
 									},
 								});
-							})}
+							}) }
 						/>
 					</MediaUploadCheck>
 				)}
@@ -169,11 +169,11 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 TwebBlockMedia.Content = ({ value }) => (
 	<>
 		{value.customUrl && value.customUrl.url ? (
-			<a href={value.customUrl.url} target={value.customUrl.opensInNewTab ? '_blank' : '_self'} rel="noopener noreferrer" title={value.alt}>
-				<img src={value.url} alt={value.alt} width={value.width} height={value.height} loading="lazy" decoding="async" />
+			<a href={ value.customUrl.url } target={ value.customUrl.opensInNewTab ? '_blank' : '_self' } rel="noopener noreferrer" title={ value.alt }>
+				<img src={ value.url } alt={ value.alt } width={ value.width } height={ value.height } loading="lazy" decoding="async" />
 			</a>
 		) : (
-			<img src={value.url} alt={value.alt} width={value.width} height={value.height} loading="lazy" decoding="async" />
+			<img src={ value.url } alt={ value.alt } width={ value.width } height={ value.height } loading="lazy" decoding="async" />
 		)}
 	</>
 );

@@ -91,17 +91,17 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 				const buttons = currentChunk.map(icon => (
 					twebIcons[icon] && (
 						<Button
-							label={icon.replaceAll('-', ' ')}
-							key={icon}
-							onClick={() => {
+							label={ icon.replaceAll('-', ' ') }
+							key={ icon }
+							onClick={ () => {
 								setSelectedIcon(icon);
 								setAttributes({
 									[name]: icon,
 								});
-							}}
+							} }
 						>
 							<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-								<Path d={twebIcons[icon]} />
+								<Path d={ twebIcons[icon] } />
 							</SVG>
 						</Button>
 					)
@@ -132,30 +132,30 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 						{label}:
 						<Button
 							variant="secondary"
-							onClick={() => {
+							onClick={ () => {
 								setIsVisible(state => !state);
-							}}
+							} }
 							icon={ <TwebSVG icon={ selectedIcon } /> }
 						/>
 						{selectedIcon && (
 							<Button
 								className="components-button is-link is-destructive"
-								onClick={() => {
+								onClick={ () => {
 									setSelectedIcon(false);
 									setAttributes({
 										[name]: '',
 									});
-								}}>
+								} }>
 								{(typeof twebI18n !== 'undefined' && twebI18n.removeIcon) || 'Remove Icon'}
 							</Button>
 						)}
 					</div>
-					<div className={`components-tweb-icon-field${isVisible ? '' : ' is-hidden'}`}>
+					<div className={ `components-tweb-icon-field${isVisible ? '' : ' is-hidden'}` }>
 						<div className="components-tweb-icon-field__search">
 							<input
 								type="text"
-								placeholder={(typeof twebI18n !== 'undefined' && twebI18n.searchIcon) || 'Search Icon'}
-								onChange={twebFilterIcons}
+								placeholder={ (typeof twebI18n !== 'undefined' && twebI18n.searchIcon) || 'Search Icon' }
+								onChange={ twebFilterIcons }
 							/>
 						</div>
 						<div className="components-tweb-icon-field__content">

@@ -92,15 +92,15 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 				const buttons = currentChunk.map(icon => (
 					twebIcons[icon] && (
 						<Button
-							label={icon.replaceAll('-', ' ')}
-							key={icon}
-							onClick={() => {
+							label={ icon.replaceAll('-', ' ') }
+							key={ icon }
+							onClick={ () => {
 								setSelectedIcon(icon);
 								setMetaValue(icon);
-							}}
+							} }
 						>
 							<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-								<Path d={twebIcons[icon]} />
+								<Path d={ twebIcons[icon] } />
 							</SVG>
 						</Button>
 					)
@@ -124,35 +124,35 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 	});
 
 	return (
-		<BaseControl help={help}>
+		<BaseControl help={ help }>
 			<TwebIconStyledComponent className="components-base-control components-tweb-icon">
 				<div className="components-tweb-icon-field">
 					<div className="components-tweb-icon-field__header">
 						{label}:
 						<Button
 							variant="secondary"
-							onClick={() => {
+							onClick={ () => {
 								setIsVisible(state => !state);
-							}}
+							} }
 							icon={ <TwebSVG icon={ selectedIcon } /> }
 						/>
 						{selectedIcon && (
 							<Button
 								className="components-button is-link is-destructive"
-								onClick={() => {
+								onClick={ () => {
 									setSelectedIcon(false);
 									setMetaValue(false);
-								}}>
+								} }>
 								{(typeof twebI18n !== 'undefined' && twebI18n.removeIcon) || 'Remove Icon'}
 							</Button>
 						)}
 					</div>
-					<div className={`components-tweb-icon-field${isVisible ? '' : ' is-hidden'}`}>
+					<div className={ `components-tweb-icon-field${isVisible ? '' : ' is-hidden'}` }>
 						<div className="components-tweb-icon-field__search">
 							<input
 								type="text"
-								placeholder={(typeof twebI18n !== 'undefined' && twebI18n.searchIcon) || 'Search Icon'}
-								onChange={twebFilterIcons}
+								placeholder={ (typeof twebI18n !== 'undefined' && twebI18n.searchIcon) || 'Search Icon' }
+								onChange={ twebFilterIcons }
 							/>
 						</div>
 						<div className="components-tweb-icon-field__content">

@@ -79,14 +79,14 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 						setAttributes({
 							[name]: 0,
 						});
-					}}>{ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }</Button>
+					} }>{ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }</Button>
 				</div>
 			) : (
 				<MediaUploadCheck>
 					<MediaUpload
 						value={ attributes[name] }
 						render={ ({ open }) => (
-							<Button className="components-button editor-post-featured-image__toggle" onClick={open}>
+							<Button className="components-button editor-post-featured-image__toggle" onClick={ open }>
 								{ (typeof twebI18n !== 'undefined' && twebI18n.openMediaLibrary) || 'Open Media Library' }
 							</Button>
 						) }

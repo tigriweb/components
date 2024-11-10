@@ -59,8 +59,8 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 
 	return (
 		<BaseControl
-			label={label}
-			help={help}
+			label={ label }
+			help={ help }
 		>
 			{mediaData ? (
 				<div className="editor-post-featured-image">
@@ -81,20 +81,20 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 					<Button className="components-button is-link is-destructive" onClick={ () => {
 						setMediaData('');
 						setMetaValue(0);
-					}}>{ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }</Button>
+					} }>{ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }</Button>
 				</div>
 			) : (
 				<MediaUploadCheck>
 					<MediaUpload
-						value={metaValue}
-						render={({ open }) => (
-							<Button className="components-button editor-post-featured-image__toggle" onClick={open}>
+						value={ metaValue  }
+						render={ ({ open }) => (
+							<Button className="components-button editor-post-featured-image__toggle" onClick={ open }>
 								{ (typeof twebI18n !== 'undefined' && twebI18n.openMediaLibrary) || 'Open Media Library' }
 							</Button>
-						)}
-						onSelect={value => {
+						) }
+						onSelect={ value => {
 							setMetaValue(value.id);
-						}}
+						} }
 					/>
 				</MediaUploadCheck>
 			)}

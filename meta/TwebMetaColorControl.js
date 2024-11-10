@@ -13,17 +13,17 @@ import {
 const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (
 		<BaseControl
-			help={help}
+			help={ help }
 		>
 			<ColorPaletteControl
-				label={label}
-				help={help}
-				value={metaValue}
-				clearable={false}
-				enableAlpha={false}
-				onChange={value => {
+				label={ label }
+				help={ help }
+				value={ metaValue }
+				clearable={ false }
+				enableAlpha={ false }
+				onChange={ value => {
 					setMetaValue(value);
-				}}
+				} }
 			/>
 		</BaseControl>
 	);

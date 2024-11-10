@@ -10,18 +10,18 @@ import {
 const TwebMetaRadioControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue }) => {
 	return (
 		<BaseControl
-			label={label}
-			help={help}
+			label={ label }
+			help={ help }
 		>
 			<RadioControl
-				selected={metaValue}
-				options={Object.entries(choices).map(([value, label]) => ({
+				selected={ metaValue }
+				options={ Object.entries(choices).map(([value, label]) => ({
 					value,
 					label,
-				}))}
-				onChange={value => {
+				})) }
+				onChange={ value => {
 					setMetaValue(value);
-				}}
+				} }
 			/>
 		</BaseControl>
 	);
