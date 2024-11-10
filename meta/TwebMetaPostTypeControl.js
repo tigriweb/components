@@ -13,31 +13,32 @@ import {
 
 const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue }) => {
 	const postTypeRecords = useSelect(select => {
-		return select('core').getEntityRecords('postType', postType, { status: 'publish' });
+		// eslint-disable-next-line camelcase
+		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1 });
 	});
 
 	return (
 		<BaseControl
-			label={label}
-			help={help}
+			label={ label }
+			help={ help }
 		>
 			{postTypeRecords !== null ? (
 				<SelectControl
-					value={metaValue}
-					options={[
+					value={ metaValue }
+					options={ [
 						{ value: '', label: '----' },
 						...postTypeRecords.map(({ id, title }) => ({ value: id, label: title.rendered })),
-					]}
-					onChange={value => {
+					] }
+					onChange={ value => {
 						setMetaValue(value);
-					}}
+					} }
 				/>
 			) : (
 				<SelectControl
-					options={[{
+					options={ [{
 						value: '',
 						label: '----',
-					}]}
+					}] }
 					disabled
 				/>
 			)}

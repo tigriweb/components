@@ -21,10 +21,10 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 			{postTypeRecords !== null ? (
 				<SelectControl
 					value={ attributes[name] }
-					options={[
+					options={ [
 						{ value: '', label: '----' },
 						...postTypeRecords.map(({ id, title }) => ({ value: id, label: title.rendered })),
-					]}
+					] }
 					onChange={ onChange || (value => {
 						setAttributes({
 							[name]: value,
@@ -33,10 +33,10 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 				/>
 			) : (
 				<SelectControl
-					options={[{
+					options={ [{
 						value: '',
 						label: '----',
-					}]}
+					}] }
 					disabled
 				/>
 			)}

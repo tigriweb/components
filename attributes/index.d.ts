@@ -108,17 +108,17 @@ declare module '@tigriweb/components/attributes' {
 		help?: string;
 		taxonomy: string;
 		name: string;
-		onChange?: (selectedTerms: string[]) => void;
+		onChange?: (value: string) => void;
 		attributes: Record<string, any>;
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;
 
-	export function TwebBlockTaxonomySelectControl(props: {
+	export function TwebBlockTaxonomyMultipleControl(props: {
 		label: string;
 		help?: string;
 		taxonomy: string;
 		name: string;
-		onChange?: (value: string) => void;
+		onChange?: (selectedTerms: string[]) => void;
 		attributes: Record<string, any>;
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;

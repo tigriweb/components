@@ -1,6 +1,6 @@
 import {
 	BaseControl,
-	FormTokenField,
+	SelectControl,
 } from '@wordpress/components';
 
 import {
@@ -9,53 +9,36 @@ import {
 
 import {
 	twebWithPostMeta,
-} from './../helpers';
+} from '../helpers';
 
 const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue }) => {
 	const taxonomyRecords = useSelect(select => {
-		return select('core').getEntityRecords('taxonomy', taxonomy);
+		// eslint-disable-next-line camelcase
+		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1 });
 	});
 
 	return (
 		<BaseControl
-			help={help}
+			label={ label }
+			help={ help }
 		>
-			{(taxonomyRecords !== null) && (taxonomyRecords.length > 0) ? (
-				<FormTokenField
-					label={label}
-					value={
-						metaValue.map(termId => {
-							const foundTerm = taxonomyRecords.find(term => {
-								return term.id === parseInt(termId);
-							});
-
-							return (foundTerm === undefined || ! foundTerm) ? false : foundTerm.name;
-						})
-					}
-					suggestions={
-						taxonomyRecords.map(term => term.name)
-					}
-					onChange={ selectedTerms => {
-						const selectedTermsIds = [];
-
-						selectedTerms.map(termName => {
-							const foundTerm = taxonomyRecords.find(term => {
-								return term.name === termName;
-							});
-
-							if (foundTerm !== undefined) {
-								selectedTermsIds.push(foundTerm.id);
-							}
-						});
-
-						setMetaValue(selectedTermsIds);
+			{taxonomyRecords !== null ? (
+				<SelectControl
+					value={ metaValue }
+					options={ [
+						{ value: '', label: '----' },
+						...taxonomyRecords.map(({ id, name }) => ({ value: id, label: name })),
+					] }
+					onChange={ value => {
+						setMetaValue(value);
 					} }
-					__experimentalExpandOnFocus={true}
 				/>
 			) : (
-				<FormTokenField
-					label={label}
-					placeholder={'----'}
+				<SelectControl
+					options={ [{
+						value: '',
+						label: '----',
+					}] }
 					disabled
 				/>
 			)}

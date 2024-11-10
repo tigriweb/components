@@ -8,7 +8,7 @@ export { default as TwebBlockRadioControl } from './TwebBlockRadioControl';
 export { default as TwebBlockRangeControl } from './TwebBlockRangeControl';
 export { default as TwebBlockSelectControl } from './TwebBlockSelectControl';
 export { default as TwebBlockTaxonomyControl } from './TwebBlockTaxonomyControl';
-export { default as TwebBlockTaxonomySelectControl } from './TwebBlockTaxonomySelectControl';
+export { default as TwebBlockTaxonomyMultipleControl } from './TwebBlockTaxonomyMultipleControl';
 export { default as TwebBlockTextareaControl } from './TwebBlockTextareaControl';
 export { default as TwebBlockTextControl } from './TwebBlockTextControl';
 export { default as TwebBlockToggleControl } from './TwebBlockToggleControl';

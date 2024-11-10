@@ -1,6 +1,6 @@
 import {
 	BaseControl,
-	FormTokenField,
+	SelectControl,
 } from '@wordpress/components';
 
 import {
@@ -15,46 +15,28 @@ const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attri
 
 	return (
 		<BaseControl
+			label={ label }
 			help={ help }
 		>
-			{(taxonomyRecords !== null) && (taxonomyRecords.length > 0) ? (
-				<FormTokenField
-					label={ label }
-					value={
-						attributes[name].map(termId => {
-							const foundTerm = taxonomyRecords.find(term => {
-								return term.id === parseInt(termId);
-							});
-
-							return (foundTerm === undefined || ! foundTerm) ? false : foundTerm.name;
-						})
-					}
-					suggestions={
-						taxonomyRecords.map(term => term.name)
-					}
-					onChange={ onChange || (selectedTerms => {
-						const selectedTermsIds = [];
-
-						selectedTerms.map(termName => {
-							const foundTerm = taxonomyRecords.find(term => {
-								return term.name === termName;
-							});
-
-							if (foundTerm !== undefined) {
-								selectedTermsIds.push(foundTerm.id);
-							}
-						});
-
+			{taxonomyRecords !== null ? (
+				<SelectControl
+					value={ attributes[name] }
+					options={ [
+						{ value: '', label: '----' },
+						...taxonomyRecords.map(({ id, name }) => ({ value: id, label: name })),
+					] }
+					onChange={ onChange || (value => {
 						setAttributes({
-							[name]: selectedTermsIds,
+							[name]: value,
 						});
 					}) }
-					__experimentalExpandOnFocus={true}
 				/>
 			) : (
-				<FormTokenField
-					label={ label }
-					placeholder={ '----' }
+				<SelectControl
+					options={ [{
+						value: '',
+						label: '----',
+					}] }
 					disabled
 				/>
 			)}

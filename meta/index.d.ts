@@ -35,6 +35,14 @@ declare module '@tigriweb/components/meta' {
 		setMetaValue: (value: string) => void;
 	}): React.JSX.Element;
 
+	export function TwebMetaPostTypeMultipleControl(props: {
+		label: string;
+		help?: string;
+		postType: string;
+		metaValue: string;
+		setMetaValue: (value: number[]) => void;
+	}): React.JSX.Element;
+
 	export function TwebMetaRadioControl(props: {
 		label: string;
 		help?: string;
@@ -62,6 +70,14 @@ declare module '@tigriweb/components/meta' {
 	}): React.JSX.Element;
 
 	export function TwebMetaTaxonomyControl(props: {
+		label: string;
+		help?: string;
+		taxonomy: string;
+		metaValue: number[];
+		setMetaValue: (value: string) => void;
+	}): React.JSX.Element;
+
+	export function TwebMetaTaxonomyMultipleControl(props: {
 		label: string;
 		help?: string;
 		taxonomy: string;
