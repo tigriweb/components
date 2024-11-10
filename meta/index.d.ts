@@ -13,11 +13,6 @@ declare module '@tigriweb/components/meta' {
 		setMetaValue: (value: string) => void;
 	}): React.JSX.Element;
 
-	export function TwebMetaHtmlControl(props: {
-		label: string;
-		help?: string;
-	}): React.JSX.Element;
-
 	export function TwebMetaIconControl(props: {
 		label: string;
 		help?: string;

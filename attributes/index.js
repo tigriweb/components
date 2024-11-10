@@ -1,6 +1,5 @@
 export { default as TwebBlockCheckboxControl } from './TwebBlockCheckboxControl';
 export { default as TwebBlockColorControl } from './TwebBlockColorControl';
-export { default as TwebBlockHtmlControl } from './TwebBlockHtmlControl';
 export { default as TwebBlockIconControl } from './TwebBlockIconControl';
 export { default as TwebBlockMediaControl } from './TwebBlockMediaControl';
 export { default as TwebBlockPostTypeControl } from './TwebBlockPostTypeControl';

@@ -27,11 +27,6 @@ declare module '@tigriweb/components/attributes' {
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;
 
-	export function TwebBlockHtmlControl(props: {
-		label: string;
-		help: string;
-	}): React.JSX.Element;
-
 	export function TwebBlockIconControl(props: {
 		label: string;
 		help?: string;

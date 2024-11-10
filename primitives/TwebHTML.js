@@ -4,9 +4,9 @@ import {
 
 import {
 	twebSanitizeHTML,
-} from './../helpers';
+} from '../helpers';
 
-const TwebBlockHtmlControl = ({ label, help }) => {
+const TwebHTML = ({ label, help }) => {
 	return (
 		<BaseControl label={ label } >
 			<div dangerouslySetInnerHTML={{
@@ -16,4 +16,4 @@ const TwebBlockHtmlControl = ({ label, help }) => {
 	);
 };
 
-export default TwebBlockHtmlControl;
+export default TwebHTML;
