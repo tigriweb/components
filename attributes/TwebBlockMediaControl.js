@@ -49,9 +49,12 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 		}
 	}, [attributes[name]]);
 
-	useStyleOverride({
-		css: twebMediaStyles.styles,
-	});
+	// Backward compatibility: Check if useStyleOverride is available (added in WP 6.7).
+	if (typeof useStyleOverride === 'function') {
+		useStyleOverride({
+			css: twebMediaStyles.styles,
+		});
+	}
 
 	return (
 		<BaseControl
@@ -60,6 +63,10 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 		>
 			{mediaData ? (
 				<div className="editor-post-featured-image">
+					{/* Backward compatibility: Check if useStyleOverride is unavailable (added in WP 6.7). */}
+					{typeof useStyleOverride !== 'function' && (
+						<style>{twebMediaStyles.styles}</style>
+					)}
 					<div className="editor-post-featured-image__container">
 						<TwebMediaStyledComponent className="components-base-control components-tweb-media">
 							{mediaData.title ? (

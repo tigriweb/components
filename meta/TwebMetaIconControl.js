@@ -119,13 +119,20 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 		return () => cancelAnimationFrame(requestId);
 	}, [isVisible, isLoading, iconChunks]);
 
-	useStyleOverride({
-		css: twebIconStyles.styles,
-	});
+	// Backward compatibility: Check if useStyleOverride is available (added in WP 6.7).
+	if (typeof useStyleOverride === 'function') {
+		useStyleOverride({
+			css: twebIconStyles.styles,
+		});
+	}
 
 	return (
 		<BaseControl help={ help }>
 			<TwebIconStyledComponent className="components-base-control components-tweb-icon">
+				{/* Backward compatibility: Check if useStyleOverride is unavailable (added in WP 6.7). */}
+				{typeof useStyleOverride !== 'function' && (
+					<style>{twebIconStyles.styles}</style>
+				)}
 				<div className="components-tweb-icon-field">
 					<div className="components-tweb-icon-field__header">
 						{label}:

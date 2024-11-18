@@ -69,12 +69,19 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 		}
 	}, [imageId]);
 
-	useStyleOverride({
-		css: twebMediaStyles.styles,
-	});
+	// Backward compatibility: Check if useStyleOverride is available (added in WP 6.7).
+	if (typeof useStyleOverride === 'function') {
+		useStyleOverride({
+			css: twebMediaStyles.styles,
+		});
+	}
 
 	return (
 		<TwebMediaStyledComponent className="components-base-control components-tweb-media">
+			{/* Backward compatibility: Check if useStyleOverride is unavailable (added in WP 6.7). */}
+			{typeof useStyleOverride !== 'function' && (
+				<style>{twebMediaStyles.styles}</style>
+			)}
 			<div className="components-tweb-media-field">
 				{mediaData && (
 					<>
