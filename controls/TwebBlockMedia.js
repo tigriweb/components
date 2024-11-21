@@ -40,7 +40,7 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 	const [mediaData, setMediaData] = useState(null);
 	const [popoverOpen, setPopoverOpen] = useState(false);
 
-	const imageId = value !== undefined ? value : attributes[name]?.id;
+	const imageId  = value !== undefined ? value : attributes[name]?.id;
 
 	useEffect(() => {
 		if (imageId) {
@@ -64,6 +64,15 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 					}
 				})
 				.catch(error => console.error(error));
+		} else if (attributes[name]?.url) {
+			const mediaData = {
+				alt: attributes[name]?.alt ?? '',
+				url: attributes[name]?.url,
+				width: attributes[name]?.width ?? undefined,
+				height: attributes[name]?.height ?? undefined,
+			};
+
+			setMediaData(mediaData);
 		} else {
 			setMediaData(null);
 		}
@@ -86,7 +95,7 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 				{mediaData && (
 					<>
 						<div className="components-tweb-media-field__image">
-							<img src={ mediaData.url } alt={ mediaData.alt } />
+							<img src={ mediaData.url } alt={ mediaData?.alt } />
 						</div>
 						<Button
 							className="components-tweb-media-field__button components-tweb-media-field__remove"
@@ -133,40 +142,34 @@ const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, se
 					</>
 				)}
 
-				{attributes?.[name]?.preview ? (
-					<div className="components-tweb-media-field__image">
-						<img src={ attributes[name].preview } />
-					</div>
-				) : (
-					<MediaUploadCheck>
-						<MediaUpload
-							allowedTypes={ ['image'] }
-							value={ imageId }
-							render={ ({ open }) => (
-								<Button
-									className={ mediaData ? 'components-tweb-media-field__button components-tweb-media-field__toggle' : 'components-tweb-media-field__bg' }
-									label={ (typeof twebI18n !== 'undefined' && twebI18n.toggleMedia) || 'Toggle Media' }
-									showTooltip={ true }
-									onClick={ open }
-								>
-									<Icon icon={ mediaData ? edit : media } />
-								</Button>
-							) }
-							onSelect={ onSelect || (value => {
-								setAttributes({
-									[name]: {
-										id: value.id,
-										alt: value.alt ?? '',
-										url: value.sizes[size] ? value.sizes[size].url : value.url,
-										customUrl: attributes[name].customUrl,
-										width: value.sizes[size] ? value.sizes[size].width : value.width,
-										height: value.sizes[size] ? value.sizes[size].height : value.height,
-									},
-								});
-							}) }
-						/>
-					</MediaUploadCheck>
-				)}
+				<MediaUploadCheck>
+					<MediaUpload
+						allowedTypes={ ['image'] }
+						value={ imageId }
+						render={ ({ open }) => (
+							<Button
+								className={ mediaData ? 'components-tweb-media-field__button components-tweb-media-field__toggle' : 'components-tweb-media-field__bg' }
+								label={ (typeof twebI18n !== 'undefined' && twebI18n.toggleMedia) || 'Toggle Media' }
+								showTooltip={ true }
+								onClick={ open }
+							>
+								<Icon icon={ mediaData ? edit : media } />
+							</Button>
+						) }
+						onSelect={ onSelect || (value => {
+							setAttributes({
+								[name]: {
+									id: value.id,
+									alt: value.alt ?? '',
+									url: value.sizes[size] ? value.sizes[size].url : value.url,
+									customUrl: attributes[name].customUrl,
+									width: value.sizes[size] ? value.sizes[size].width : value.width,
+									height: value.sizes[size] ? value.sizes[size].height : value.height,
+								},
+							});
+						}) }
+					/>
+				</MediaUploadCheck>
 			</div>
 		</TwebMediaStyledComponent>
 	);
