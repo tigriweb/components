@@ -1,4 +1,4 @@
-## Gutenberg Components
+## Gutenberg Components by TigriWeb
 
 This project includes a set of custom JavaScript components for the WordPress Gutenberg editor.
 
@@ -15,6 +15,10 @@ yarn add --dev @tigriweb/components
 ```
 npm install --save-dev @tigriweb/components
 ```
+
+## Dependencies
+
+In our webpack we use [Dependency Extraction Webpack Plugin](https://www.npmjs.com/package/@wordpress/dependency-extraction-webpack-plugin).
 
 ## Documentation
 
