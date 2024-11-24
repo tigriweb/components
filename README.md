@@ -4,6 +4,9 @@ This project includes a set of custom JavaScript components for the WordPress Gu
 
 By leveraging these components, developers can streamline the process of creating and customizing Gutenberg blocks more efficiently.
 
+Additionally, you can check out our presentation from WordCamp Wrocław 2024 at the [following link](https://drive.google.com/file/d/1VzeCZ7tudv8b1kG6rN-BjPk80LIR6x1V/view "WordCamp Wrocław 2024 | Maciej Lech | Gutenberg na sterydach: custom bloki w kilka minut").
+
+
 ## Installation
 
 Install with your preferred package manager:
