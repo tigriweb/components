@@ -1,4 +1,13 @@
 declare module '@tigriweb/components/meta' {
+	export function TwebBlockNumberControl(props: {
+		label: string;
+		help?: string;
+		metaValue: number;
+		setMetaValue: (value: number) => void;
+		isShiftStepEnabled?: boolean;
+		shiftStep?: number;
+	}): React.JSX.Element;
+
 	export function TwebMetaCheckboxControl(props: {
 		label: string;
 		help?: string;
