@@ -44,6 +44,17 @@ declare module '@tigriweb/components/attributes' {
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;
 
+	export function TwebBlockNumberControl(props: {
+		label: string;
+		help?: string;
+		name: string;
+		onChange?: (value: number) => void;
+		isShiftStepEnabled?: boolean;
+		shiftStep?: number;
+		attributes: Record<string, any>;
+		setAttributes: (attributes: Record<string, any>) => void;
+	}): React.JSX.Element;
+
 	export namespace TwebBlockMediaControl {
 		export function Render(props: {
 			mediaId?: number;
