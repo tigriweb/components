@@ -1,9 +1,34 @@
 declare module '@tigriweb/components/meta' {
+	export function TwebBlockDateTimeControl(props: {
+		label?: string;
+		labelButtonText?: string;
+		help?: string;
+		currentDate?: string | Date;
+		is12Hour?: boolean;
+		dateOrder?: 'dmy' | 'mdy' | 'ymd';
+		isInvalidDate?: (date: Date) => boolean;
+		onMonthPreviewed?: (month: Date) => void;
+		events?: Record<string, any>;
+		startOfWeek?: number;
+		type?: 'date' | 'datetime';
+		attributes: Record<string, any>;
+		setAttributes: (attributes: Record<string, any>) => void;
+	}): React.JSX.Element;
+
 	export function TwebBlockNumberControl(props: {
 		label: string;
 		help?: string;
 		metaValue: number;
 		setMetaValue: (value: number) => void;
+		dragDirection?: 'horizontal' | 'vertical';
+		dragThreshold?: number;
+		spinControls?: boolean;
+		isDragEnabled?: boolean;
+		labelPosition?: 'top' | 'side';
+		min?: number;
+		max?: number;
+		required?: boolean;
+		step?: number;
 		isShiftStepEnabled?: boolean;
 		shiftStep?: number;
 	}): React.JSX.Element;
