@@ -1,15 +1,20 @@
-import {
-	__experimentalNumberControl as NumberControl,
-} from '@wordpress/components';
+import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
 
-const TwebBlockNumberControl = ({ label, help, name, onChange, attributes, setAttributes, isShiftStepEnabled = false, shiftStep = 1 }) => {
+const TwebBlockNumberControl = ({ label, help, name, onChange, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, attributes, setAttributes }) => {
 	return (
 		<NumberControl
 			label={ label }
 			help={ help }
 			value={ attributes[name] }
-			isShiftStepEnabled={ isShiftStepEnabled }
-			shiftStep={ shiftStep }
+			dragDirection={ dragDirection }
+			dragThreshold={ dragThreshold }
+			spinControls={ spinControls }
+			isDragEnabled={ isDragEnabled }
+			labelPosition={ labelPosition }
+			min={ min }
+			max={ max }
+			required={ required }
+			step={ step }
 			onChange={ onChange || (value => {
 				setAttributes({
 					[name]: value,

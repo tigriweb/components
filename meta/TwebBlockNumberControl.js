@@ -1,19 +1,21 @@
-import {
-	__experimentalNumberControl as NumberControl,
-} from '@wordpress/components';
+import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
+import { twebWithPostMeta } from '../helpers';
 
-import {
-	twebWithPostMeta,
-} from '../helpers';
-
-const TwebBlockNumberControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue, isShiftStepEnabled = false, shiftStep = 1 }) => {
+const TwebBlockNumberControl = twebWithPostMeta(({ label, help, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, metaValue, setMetaValue }) => {
 	return (
 		<NumberControl
 			label={ label }
 			help={ help }
 			value={ metaValue }
-			isShiftStepEnabled={ isShiftStepEnabled }
-			shiftStep={ shiftStep }
+			dragDirection={ dragDirection }
+			dragThreshold={ dragThreshold }
+			spinControls={ spinControls }
+			isDragEnabled={ isDragEnabled }
+			labelPosition={ labelPosition }
+			min={ min }
+			max={ max }
+			required={ required }
+			step={ step }
 			onChange={ value => {
 				setMetaValue(value);
 			} }
