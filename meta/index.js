@@ -1,9 +1,9 @@
-export { default as TwebBlockDateTimeControl } from './TwebBlockDateTimeControl';
-export { default as TwebBlockNumberControl } from './TwebBlockNumberControl';
 export { default as TwebMetaCheckboxControl } from './TwebMetaCheckboxControl';
 export { default as TwebMetaColorControl } from './TwebMetaColorControl';
+export { default as TwebMetaDateTimeControl } from './TwebMetaDateTimeControl';
 export { default as TwebMetaIconControl } from './TwebMetaIconControl';
 export { default as TwebMetaMediaControl } from './TwebMetaMediaControl';
+export { default as TwebMetaNumberControl } from './TwebMetaNumberControl';
 export { default as TwebMetaPostTypeControl } from './TwebMetaPostTypeControl';
 export { default as TwebMetaPostTypeMultipleControl } from './TwebMetaPostTypeMultipleControl';
 export { default as TwebMetaRadioControl } from './TwebMetaRadioControl';

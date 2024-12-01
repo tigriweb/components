@@ -1,4 +1,6 @@
-import { useState } from '@wordpress/element';
+import {
+	useState,
+} from '@wordpress/element';
 
 import {
 	Button,
@@ -7,9 +9,12 @@ import {
 	DateTimePicker,
 	BaseControl,
 } from '@wordpress/components';
-import { twebWithPostMeta } from '../helpers';
 
-const TwebBlockDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help, currentDate, is12Hour, dateOrder = 'dmy', isInvalidDate, onMonthPreviewed, events, startOfWeek, type = 'datetime', metaValue, setMetaValue }) => {
+import {
+	twebWithPostMeta,
+} from '../helpers';
+
+const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help, currentDate, is12Hour, dateOrder = 'dmy', isInvalidDate, onMonthPreviewed, events, startOfWeek, type = 'datetime', metaValue, setMetaValue }) => {
 	const [isPopoverVisible, setIsPopoverVisible] = useState(false);
 	const [popoverAnchor, setPopoverAnchor] = useState();
 
@@ -87,4 +92,4 @@ const TwebBlockDateTimeControl = twebWithPostMeta(({ label, labelButtonText, hel
 }
 );
 
-export default TwebBlockDateTimeControl;
+export default TwebMetaDateTimeControl;

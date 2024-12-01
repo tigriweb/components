@@ -1,7 +1,12 @@
-import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
-import { twebWithPostMeta } from '../helpers';
+import {
+	__experimentalNumberControl as NumberControl,
+} from '@wordpress/components';
 
-const TwebBlockNumberControl = twebWithPostMeta(({ label, help, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, metaValue, setMetaValue }) => {
+import {
+	twebWithPostMeta,
+} from '../helpers';
+
+const TwebMetaNumberControl = twebWithPostMeta(({ label, help, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, metaValue, setMetaValue }) => {
 	return (
 		<NumberControl
 			label={ label }
@@ -23,4 +28,4 @@ const TwebBlockNumberControl = twebWithPostMeta(({ label, help, dragDirection, d
 	);
 });
 
-export default TwebBlockNumberControl;
+export default TwebMetaNumberControl;

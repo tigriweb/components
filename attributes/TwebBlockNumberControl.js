@@ -1,4 +1,6 @@
-import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
+import {
+	__experimentalNumberControl as NumberControl,
+} from '@wordpress/components';
 
 const TwebBlockNumberControl = ({ label, help, name, onChange, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, attributes, setAttributes }) => {
 	return (

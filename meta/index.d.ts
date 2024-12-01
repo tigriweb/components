@@ -1,5 +1,19 @@
 declare module '@tigriweb/components/meta' {
-	export function TwebBlockDateTimeControl(props: {
+	export function TwebMetaCheckboxControl(props: {
+		label: string;
+		help?: string;
+		metaValue: boolean;
+		setMetaValue: (value: boolean) => void;
+	}): React.JSX.Element;
+
+	export function TwebMetaColorControl(props: {
+		label: string;
+		help?: string;
+		metaValue: string;
+		setMetaValue: (value: string) => void;
+	}): React.JSX.Element;
+
+	export function TwebMetaDateTimeControl(props: {
 		label?: string;
 		labelButtonText?: string;
 		help?: string;
@@ -15,7 +29,21 @@ declare module '@tigriweb/components/meta' {
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;
 
-	export function TwebBlockNumberControl(props: {
+	export function TwebMetaIconControl(props: {
+		label: string;
+		help?: string;
+		metaValue: string;
+		setMetaValue: (value: string) => void;
+	}): React.JSX.Element;
+
+	export function TwebMetaMediaControl(props: {
+		label: string;
+		help?: string;
+		metaValue: number;
+		setMetaValue: (value: number) => void;
+	}): React.JSX.Element;
+
+	export function TwebMetaNumberControl(props: {
 		label: string;
 		help?: string;
 		metaValue: number;
@@ -31,34 +59,6 @@ declare module '@tigriweb/components/meta' {
 		step?: number;
 		isShiftStepEnabled?: boolean;
 		shiftStep?: number;
-	}): React.JSX.Element;
-
-	export function TwebMetaCheckboxControl(props: {
-		label: string;
-		help?: string;
-		metaValue: boolean;
-		setMetaValue: (value: boolean) => void;
-	}): React.JSX.Element;
-
-	export function TwebMetaColorControl(props: {
-		label: string;
-		help?: string;
-		metaValue: string;
-		setMetaValue: (value: string) => void;
-	}): React.JSX.Element;
-
-	export function TwebMetaIconControl(props: {
-		label: string;
-		help?: string;
-		metaValue: string;
-		setMetaValue: (value: string) => void;
-	}): React.JSX.Element;
-
-	export function TwebMetaMediaControl(props: {
-		label: string;
-		help?: string;
-		metaValue: number;
-		setMetaValue: (value: number) => void;
 	}): React.JSX.Element;
 
 	export function TwebMetaPostTypeControl(props: {
