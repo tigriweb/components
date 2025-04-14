@@ -44,17 +44,10 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 								return term.name === termName;
 							});
 
-
-							console.log(foundTerm);
-
 							if (foundTerm !== undefined) {
 								selectedTermsIds.push(foundTerm.id);
 							}
 						});
-
-
-						console.log({ metaValue });
-						console.log({ selectedTermsIds });
 
 						setMetaValue(selectedTermsIds);
 					} }
