@@ -19,7 +19,7 @@ const TwebBlockNumberControl = ({ label, help, name, onChange, dragDirection, dr
 			step={ step }
 			onChange={ onChange || (value => {
 				setAttributes({
-					[name]: value,
+					[name]: parseInt(value),
 				});
 			}) }
 		/>
