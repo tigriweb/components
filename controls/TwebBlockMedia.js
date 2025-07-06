@@ -37,13 +37,18 @@ import {
 const TwebMediaStyledComponent = styled.div(twebMediaStyles);
 
 const TwebBlockMedia = ({ name, size, value, onSelect, customUrl, attributes, setAttributes }) => {
-	const [mediaData, setMediaData] = useState(null);
+	const [mediaData, setMediaData] = useState(attributes[name]);
 	const [popoverOpen, setPopoverOpen] = useState(false);
 
 	const imageId  = value !== undefined ? value : attributes[name]?.id;
 
 	useEffect(() => {
 		if (imageId) {
+			// Skip fetch if mediaData already contains the current imageId.
+			if (mediaData?.id === imageId) {
+				return;
+			}
+
 			apiFetch({ path: `/wp/v2/media/${imageId}` })
 				.then(data => {
 					const mediaData = {
