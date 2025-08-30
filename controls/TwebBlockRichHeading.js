@@ -26,6 +26,7 @@ import {
 	headingLevel4,
 	headingLevel5,
 	headingLevel6,
+	paragraph,
 } from '@wordpress/icons';
 
 const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes }) => {
@@ -38,6 +39,7 @@ const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, plac
 		{ value: 'h4', icon: headingLevel4 },
 		{ value: 'h5', icon: headingLevel5 },
 		{ value: 'h6', icon: headingLevel6 },
+		{ value: 'p', icon: paragraph },
 	];
 
 	return (
