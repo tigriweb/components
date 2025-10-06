@@ -13,6 +13,7 @@ import {
 const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			help={ help }
 		>
 			<ColorPaletteControl

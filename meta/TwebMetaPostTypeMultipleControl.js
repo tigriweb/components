@@ -19,10 +19,13 @@ const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postTyp
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(postTypeRecords !== null) && (postTypeRecords.length > 0) ? (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						metaValue.map(postId => {
@@ -56,6 +59,8 @@ const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postTyp
 				/>
 			) : (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled

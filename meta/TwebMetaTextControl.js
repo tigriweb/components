@@ -9,6 +9,8 @@ import {
 const TwebMetaTextControl = twebWithPostMeta(({ label, help, type, metaValue, setMetaValue }) => {
 	return (
 		<TextControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			type={ type }

@@ -19,11 +19,14 @@ const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaV
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{postTypeRecords !== null ? (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					value={ metaValue }
 					options={ [
 						{ value: '', label: '----' },
@@ -35,6 +38,8 @@ const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaV
 				/>
 			) : (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',

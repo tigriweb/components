@@ -62,6 +62,7 @@ const TwebMetaMediaControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>

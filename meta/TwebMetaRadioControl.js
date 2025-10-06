@@ -10,6 +10,7 @@ import {
 const TwebMetaRadioControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue }) => {
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>

@@ -5,6 +5,8 @@ import {
 const TwebBlockRangeControl = ({ label, help, min = 0, max, step = 1, name, onChange, attributes, setAttributes }) => {
 	return (
 		<RangeControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			value={ attributes[name] }

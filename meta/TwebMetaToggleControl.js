@@ -10,6 +10,7 @@ import {
 const TwebMetaToggleControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (
 		<ToggleControl
+			__nextHasNoMarginBottom
 			label={ twebGetTextFromArray(label, metaValue) }
 			help={ twebGetTextFromArray(help, metaValue) }
 			checked={ metaValue }

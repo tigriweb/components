@@ -15,10 +15,13 @@ const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChang
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(postTypeRecords !== null) && (postTypeRecords.length > 0) ? (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						attributes[name].map(postId => {
@@ -54,6 +57,8 @@ const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChang
 				/>
 			) : (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled

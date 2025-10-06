@@ -15,11 +15,14 @@ const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attri
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{taxonomyRecords !== null ? (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					value={ attributes[name] }
 					options={ [
 						{ value: '', label: '----' },
@@ -33,6 +36,8 @@ const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attri
 				/>
 			) : (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',

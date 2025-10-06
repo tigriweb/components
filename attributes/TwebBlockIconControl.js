@@ -128,7 +128,10 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 	}
 
 	return (
-		<BaseControl help={ help }>
+		<BaseControl
+			__nextHasNoMarginBottom
+			help={ help }
+		>
 			<TwebIconStyledComponent className="components-base-control components-tweb-icon">
 				{/* Backward compatibility: Check if useStyleOverride is unavailable (added in WP 6.7). */}
 				{typeof useStyleOverride !== 'function' && (

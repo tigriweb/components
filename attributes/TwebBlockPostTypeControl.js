@@ -15,11 +15,14 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{postTypeRecords !== null ? (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					value={ attributes[name] }
 					options={ [
 						{ value: '', label: '----' },
@@ -33,6 +36,8 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 				/>
 			) : (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',

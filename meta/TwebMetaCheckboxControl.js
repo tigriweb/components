@@ -9,6 +9,7 @@ import {
 const TwebMetaCheckboxControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
 	return (
 		<CheckboxControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			checked={ metaValue }

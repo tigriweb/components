@@ -9,6 +9,8 @@ import {
 const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1, metaValue, setMetaValue }) => {
 	return (
 		<RangeControl
+			__next40pxDefaultSize
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			value={ metaValue }

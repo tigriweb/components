@@ -5,6 +5,7 @@ import {
 const TwebBlockCheckboxControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
 	return (
 		<CheckboxControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			checked={ attributes[name] }

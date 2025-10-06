@@ -9,6 +9,7 @@ import {
 const TwebBlockToggleControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
 	return (
 		<ToggleControl
+			__nextHasNoMarginBottom
 			label={ twebGetTextFromArray(label, attributes[name]) }
 			help={ twebGetTextFromArray(help, attributes[name]) }
 			checked={ attributes[name] }

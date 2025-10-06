@@ -19,10 +19,13 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(taxonomyRecords !== null) && (taxonomyRecords.length > 0) ? (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						metaValue.map(termId => {
@@ -55,6 +58,8 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 				/>
 			) : (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled

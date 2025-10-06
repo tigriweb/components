@@ -15,10 +15,13 @@ const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChang
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(taxonomyRecords !== null) && (taxonomyRecords.length > 0) ? (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						attributes[name].map(termId => {
@@ -53,6 +56,8 @@ const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChang
 				/>
 			) : (
 				<FormTokenField
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled

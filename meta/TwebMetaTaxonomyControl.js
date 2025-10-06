@@ -19,11 +19,14 @@ const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaV
 
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{taxonomyRecords !== null ? (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					value={ metaValue }
 					options={ [
 						{ value: '', label: '----' },
@@ -35,6 +38,8 @@ const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaV
 				/>
 			) : (
 				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',

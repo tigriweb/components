@@ -6,6 +6,7 @@ import {
 const TwebBlockRadioControl = ({ label, help, choices, name, attributes, setAttributes }) => {
 	return (
 		<BaseControl
+			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
