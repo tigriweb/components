@@ -73,22 +73,22 @@ const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help
 				label={ label }
 				help={ help }
 			>
-				<div ref={ setPopoverAnchor }>
+				<span ref={ setPopoverAnchor }>
 					<Button
 						onClick={ () => setIsPopoverVisible(state => !state) }
 						variant="tertiary"
 					>
 						{metaValue || labelButtonText}
 					</Button>
-				</div>
+				</span>
 			</BaseControl>
 			{ isPopoverVisible && (
 				<Popover
 					anchor={ popoverAnchor }
-					placement="right-start"
+					placement="bottom-start"
 					onClose={ () => setIsPopoverVisible(false) }
 				>
-					<div style={ { padding: 16 } }>{ renderPicker() }</div>
+					<div style={ { padding: '16px' } }>{ renderPicker() }</div>
 				</Popover>
 			) }
 		</>
