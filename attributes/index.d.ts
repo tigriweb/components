@@ -40,6 +40,7 @@ declare module '@tigriweb/components/attributes' {
 		help?: string;
 		name: string;
 		onSelect?: (media: any) => void;
+		isAdmin?: boolean;
 		attributes: Record<string, any>;
 		setAttributes: (attributes: Record<string, any>) => void;
 	}): React.JSX.Element;

@@ -1,4 +1,4 @@
-/* global twebI18n */
+/* global wp, twebI18n */
 
 import {
 	useState,
@@ -27,7 +27,7 @@ import {
 
 const TwebMediaStyledComponent = styled.div(twebMediaStyles);
 
-const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAttributes }) => {
+const TwebBlockMediaControl = ({ label, help, name, onSelect, isAdmin, attributes, setAttributes }) => {
 	const [mediaData, setMediaData] = useState();
 
 	useEffect(() => {
@@ -62,7 +62,7 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 			label={ label }
 			help={ help }
 		>
-			{mediaData ? (
+			{ mediaData ? (
 				<div className="editor-post-featured-image">
 					{/* Backward compatibility: Check if useStyleOverride is unavailable (added in WP 6.7). */}
 					{typeof useStyleOverride !== 'function' && (
@@ -90,22 +90,49 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, attributes, setAtt
 					} }>{ (typeof twebI18n !== 'undefined' && twebI18n.removeMedia) || 'Remove Media' }</Button>
 				</div>
 			) : (
-				<MediaUploadCheck>
-					<MediaUpload
-						value={ attributes[name] }
-						render={ ({ open }) => (
-							<Button className="components-button editor-post-featured-image__toggle" onClick={ open }>
-								{ (typeof twebI18n !== 'undefined' && twebI18n.openMediaLibrary) || 'Open Media Library' }
-							</Button>
-						) }
-						onSelect={ onSelect || (value => {
-							setAttributes({
-								[name]: value.id,
-							});
-						}) }
-					/>
-				</MediaUploadCheck>
-			)}
+				<>
+					{/* isAdmin → use wp.media instead of MediaUpload, where the block editor context is not available */}
+					{ isAdmin ? (
+						<Button
+							variant="secondary"
+							onClick={ () => {
+								const frame = wp.media({
+									title: label,
+									multiple: false,
+								});
+
+								frame.on('select', () => {
+									const attachment = frame.state().get('selection').first().toJSON();
+
+									setAttributes({
+										[name]: attachment.id,
+									});
+								});
+
+								frame.open();
+							} }
+						>
+							{ (typeof twebI18n !== 'undefined' && twebI18n.openMediaLibrary) || 'Open Media Library' }
+						</Button>
+					) : (
+						<MediaUploadCheck>
+							<MediaUpload
+								value={ attributes[name] }
+								render={ ({ open }) => (
+									<Button className="components-button editor-post-featured-image__toggle" onClick={ open }>
+										{ (typeof twebI18n !== 'undefined' && twebI18n.openMediaLibrary) || 'Open Media Library' }
+									</Button>
+								) }
+								onSelect={ onSelect || (value => {
+									setAttributes({
+										[name]: value.id,
+									});
+								}) }
+							/>
+						</MediaUploadCheck>
+					)}
+				</>
+			) }
 		</BaseControl>
 	);
 };
