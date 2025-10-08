@@ -10,7 +10,7 @@ import {
 const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attributes, setAttributes }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
-		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1 });
+		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
 	});
 
 	return (

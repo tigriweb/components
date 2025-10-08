@@ -10,7 +10,7 @@ import {
 const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChange, attributes, setAttributes }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
-		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1 });
+		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
 	});
 
 	return (
@@ -35,6 +35,7 @@ const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChang
 					suggestions={
 						taxonomyRecords.map(term => term.name)
 					}
+					maxSuggestions={ -1 }
 					onChange={ onChange || (selectedTerms => {
 						const selectedTermsIds = [];
 

@@ -14,7 +14,7 @@ import {
 const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
-		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1 });
+		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
 	});
 
 	return (
@@ -30,7 +30,7 @@ const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaV
 					value={ metaValue }
 					options={ [
 						{ value: '', label: '----' },
-						...postTypeRecords.map(({ id, title }) => ({ value: id, label: title.rendered })),
+						...postTypeRecords.map(({ id, title }) => ({ value: id, label: title.raw })),
 					] }
 					onChange={ value => {
 						setMetaValue(value);

@@ -14,7 +14,7 @@ import {
 const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
-		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1 });
+		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
 	});
 
 	return (
@@ -39,6 +39,7 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 					suggestions={
 						taxonomyRecords.map(term => term.name)
 					}
+					maxSuggestions={ -1 }
 					onChange={ selectedTerms => {
 						const selectedTermsIds = [];
 

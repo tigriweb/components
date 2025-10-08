@@ -10,7 +10,7 @@ import {
 const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChange, attributes, setAttributes }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
-		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1 });
+		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
 	});
 
 	return (
@@ -29,19 +29,19 @@ const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChang
 								return post.id === parseInt(postId);
 							});
 
-							return (foundPost === undefined || ! foundPost) ? false : foundPost.title.rendered;
+							return (foundPost === undefined || ! foundPost) ? false : foundPost.title.raw;
 						})
 					}
 					suggestions={
-						postTypeRecords.map(post => post.title.rendered)
+						postTypeRecords.map(post => post.title.raw)
 					}
-					maxLength="1"
+					maxSuggestions={ -1 }
 					onChange={ onChange || (selectedPosts => {
 						const selectedPostsIds = [];
 
 						selectedPosts.map(postTitle => {
 							const foundPost = postTypeRecords.find(post => {
-								return post.title.rendered === postTitle;
+								return post.title.raw === postTitle;
 							});
 
 							if (foundPost !== undefined) {

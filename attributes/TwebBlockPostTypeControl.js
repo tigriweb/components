@@ -10,7 +10,7 @@ import {
 const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attributes, setAttributes }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
-		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1 });
+		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
 	});
 
 	return (
@@ -26,7 +26,7 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 					value={ attributes[name] }
 					options={ [
 						{ value: '', label: '----' },
-						...postTypeRecords.map(({ id, title }) => ({ value: id, label: title.rendered })),
+						...postTypeRecords.map(({ id, title }) => ({ value: id, label: title.raw })),
 					] }
 					onChange={ onChange || (value => {
 						setAttributes({
