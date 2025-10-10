@@ -91,6 +91,7 @@ declare module '@tigriweb/components/meta' {
 		min: number;
 		max: number;
 		step?: number;
+		beforeIcon?: React.ReactNode;
 		metaValue: number;
 		setMetaValue: (value: number) => void;
 	}): React.JSX.Element;

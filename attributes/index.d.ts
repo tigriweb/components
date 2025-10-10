@@ -126,6 +126,7 @@ declare module '@tigriweb/components/attributes' {
 		max: number;
 		step?: number;
 		name: string;
+		beforeIcon?: React.ReactNode;
 		onChange?: (value: number) => void;
 		attributes: Record<string, any>;
 		setAttributes: (attributes: Record<string, any>) => void;

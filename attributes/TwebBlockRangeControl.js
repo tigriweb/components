@@ -2,7 +2,11 @@ import {
 	RangeControl,
 } from '@wordpress/components';
 
-const TwebBlockRangeControl = ({ label, help, min = 0, max, step = 1, name, onChange, attributes, setAttributes }) => {
+const TwebBlockRangeControl = ({ label, help, min = 0, max, step = 1, name, beforeIcon, onChange, attributes, setAttributes, ...restProps }) => {
+	const iconWithFixRailHeight = beforeIcon ? (
+		<span style={ { marginTop: '-4px', display: 'flex' } }>{ beforeIcon }</span>
+	) : undefined;
+
 	return (
 		<RangeControl
 			__next40pxDefaultSize
@@ -13,11 +17,13 @@ const TwebBlockRangeControl = ({ label, help, min = 0, max, step = 1, name, onCh
 			min={ min || 0 }
 			max={ max }
 			step={ step || 1 }
+			beforeIcon={ iconWithFixRailHeight }
 			onChange={ onChange || (value => {
 				setAttributes({
 					[name]: value,
 				});
 			}) }
+			{ ...restProps }
 		/>
 	);
 };
