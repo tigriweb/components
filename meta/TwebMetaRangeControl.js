@@ -15,7 +15,7 @@ const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1
 		<RangeControl
 			__next40pxDefaultSize
 			__nextHasNoMarginBottom
-			label={ label }z
+			label={ label }
 			help={ help }
 			value={ metaValue }
 			min={ min }
