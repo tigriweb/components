@@ -35,7 +35,7 @@ const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChang
 					suggestions={
 						taxonomyRecords.map(term => term.name)
 					}
-					maxSuggestions={ -1 }
+					maxSuggestions={ 1000 }
 					onChange={ onChange || (selectedTerms => {
 						const selectedTermsIds = [];
 

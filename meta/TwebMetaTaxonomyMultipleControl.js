@@ -39,7 +39,7 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 					suggestions={
 						taxonomyRecords.map(term => term.name)
 					}
-					maxSuggestions={ -1 }
+					maxSuggestions={ 10000 }
 					onChange={ selectedTerms => {
 						const selectedTermsIds = [];
 

@@ -35,7 +35,7 @@ const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChang
 					suggestions={
 						postTypeRecords.map(post => post.title.raw)
 					}
-					maxSuggestions={ -1 }
+					maxSuggestions={ 1000 }
 					onChange={ onChange || (selectedPosts => {
 						const selectedPostsIds = [];
 

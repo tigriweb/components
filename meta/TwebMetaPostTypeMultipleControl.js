@@ -39,7 +39,7 @@ const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postTyp
 					suggestions={
 						postTypeRecords.map(post => post.title.raw)
 					}
-					maxSuggestions={ -1 }
+					maxSuggestions={ 1000 }
 					onChange={ selectedPosts => {
 						const selectedPostsIds = [];
 
