@@ -7,7 +7,7 @@ import {
 	useSelect,
 } from '@wordpress/data';
 
-const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attributes, setAttributes }) => {
+const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attributes, setAttributes, ...props }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
@@ -15,14 +15,12 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{postTypeRecords !== null ? (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					value={ attributes[name] }
 					options={ [
 						{ value: '', label: '----' },
@@ -33,16 +31,17 @@ const TwebBlockPostTypeControl = ({ label, help, postType, name, onChange, attri
 							[name]: value,
 						});
 					}) }
+					{ ...props }
 				/>
 			) : (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',
 					}] }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

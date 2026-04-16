@@ -3,16 +3,14 @@ import {
 	SelectControl,
 } from '@wordpress/components';
 
-const TwebBlockSelectControl = ({ label, help, choices, name, onChange, attributes, setAttributes }) => {
+const TwebBlockSelectControl = ({ label, help, choices, name, onChange, attributes, setAttributes, ...props }) => {
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			<SelectControl
 				__next40pxDefaultSize
-				__nextHasNoMarginBottom
 				value={ attributes[name] }
 				options={ Object.entries(choices).map(([value, label]) => ({
 					value,
@@ -23,6 +21,7 @@ const TwebBlockSelectControl = ({ label, help, choices, name, onChange, attribut
 						[name]: value,
 					});
 				}) }
+				{ ...props }
 			/>
 		</BaseControl>
 	);

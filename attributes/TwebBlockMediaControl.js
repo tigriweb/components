@@ -58,7 +58,6 @@ const TwebBlockMediaControl = ({ label, help, name, onSelect, isAdmin, attribute
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>

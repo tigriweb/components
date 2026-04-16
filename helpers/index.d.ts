@@ -8,7 +8,5 @@ declare module '@tigriweb/components/helpers' {
 
 	export function twebWithPostMeta(WrappedComponent: React.ComponentType<any>): (props: {
 		metaKey: string;
-		isNewProductEditor: boolean;
-		defaultValue?: any;
 	}) => React.JSX.Element;
 }

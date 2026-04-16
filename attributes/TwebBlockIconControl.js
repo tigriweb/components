@@ -129,7 +129,6 @@ const TwebBlockIconControl = ({ label, help, name, attributes, setAttributes }) 
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			help={ help }
 		>
 			<TwebIconStyledComponent className="components-base-control components-tweb-icon">

@@ -3,10 +3,9 @@ import {
 	RadioControl,
 } from '@wordpress/components';
 
-const TwebBlockRadioControl = ({ label, help, choices, name, attributes, setAttributes }) => {
+const TwebBlockRadioControl = ({ label, help, choices, name, attributes, setAttributes, ...props }) => {
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
@@ -21,6 +20,7 @@ const TwebBlockRadioControl = ({ label, help, choices, name, attributes, setAttr
 						[name]: value,
 					});
 				} }
+				{ ...props }
 			/>
 		</BaseControl>
 	);

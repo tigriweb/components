@@ -11,7 +11,7 @@ import {
 	twebWithPostMeta,
 } from '../helpers';
 
-const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue }) => {
+const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue, ...props }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
@@ -19,14 +19,12 @@ const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaV
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{taxonomyRecords !== null ? (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					value={ metaValue }
 					options={ [
 						{ value: '', label: '----' },
@@ -35,16 +33,17 @@ const TwebMetaTaxonomyControl = twebWithPostMeta(({ label, help, taxonomy, metaV
 					onChange={ value => {
 						setMetaValue(value);
 					} }
+					{ ...props }
 				/>
 			) : (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',
 					}] }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

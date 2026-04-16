@@ -128,7 +128,6 @@ const TwebMetaIconControl = twebWithPostMeta(({ label, help, metaValue, setMetaV
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			help={ help }
 		>
 			<TwebIconStyledComponent className="components-base-control components-tweb-icon">

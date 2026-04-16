@@ -2,7 +2,7 @@ import {
 	__experimentalNumberControl as NumberControl,
 } from '@wordpress/components';
 
-const TwebBlockNumberControl = ({ label, help, name, onChange, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, attributes, setAttributes }) => {
+const TwebBlockNumberControl = ({ label, help, name, onChange, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, attributes, setAttributes, ...props }) => {
 	return (
 		<NumberControl
 			__next40pxDefaultSize
@@ -23,6 +23,7 @@ const TwebBlockNumberControl = ({ label, help, name, onChange, dragDirection, dr
 					[name]: parseInt(value),
 				});
 			}) }
+			{ ...props }
 		/>
 	);
 };

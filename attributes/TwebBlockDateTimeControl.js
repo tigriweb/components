@@ -10,7 +10,7 @@ import {
 	BaseControl,
 } from '@wordpress/components';
 
-const TwebBlockDateTimeControl = ({ label, labelButtonText, help, name, currentDate, is12Hour, dateOrder = 'dmy', isInvalidDate, onMonthPreviewed, events, startOfWeek, type = 'datetime', attributes, setAttributes }) => {
+const TwebBlockDateTimeControl = ({ label, labelButtonText, help, name, currentDate, is12Hour, dateOrder = 'dmy', isInvalidDate, onMonthPreviewed, events, startOfWeek, type = 'datetime', attributes, setAttributes, ...props }) => {
 	const [isPopoverVisible, setIsPopoverVisible] = useState(false);
 	const [popoverAnchor, setPopoverAnchor] = useState();
 
@@ -45,6 +45,7 @@ const TwebBlockDateTimeControl = ({ label, labelButtonText, help, name, currentD
 					onChange={ newDate => handleDateChange(newDate) }
 					isInvalidDate={ isInvalidDate }
 					startOfWeek={ startOfWeek }
+					{ ...props }
 				/>
 			);
 		case 'datetime':
@@ -59,6 +60,7 @@ const TwebBlockDateTimeControl = ({ label, labelButtonText, help, name, currentD
 					onMonthPreviewed={ onMonthPreviewed }
 					events={ events }
 					startOfWeek={ startOfWeek }
+					{ ...props }
 				/>
 			);
 		}
@@ -67,7 +69,6 @@ const TwebBlockDateTimeControl = ({ label, labelButtonText, help, name, currentD
 	return (
 		<>
 			<BaseControl
-				__nextHasNoMarginBottom
 				label={ label }
 				help={ help }
 			>

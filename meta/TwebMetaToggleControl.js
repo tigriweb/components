@@ -7,16 +7,16 @@ import {
 	twebGetTextFromArray,
 } from './../helpers';
 
-const TwebMetaToggleControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
+const TwebMetaToggleControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue, ...props }) => {
 	return (
 		<ToggleControl
-			__nextHasNoMarginBottom
 			label={ twebGetTextFromArray(label, metaValue) }
 			help={ twebGetTextFromArray(help, metaValue) }
 			checked={ metaValue }
 			onChange={ value => {
 				setMetaValue(value);
 			} }
+			{ ...props }
 		/>
 	);
 });

@@ -8,7 +8,7 @@ import {
 	useState,
 } from '@wordpress/element';
 
-const TwebToolbarGroup = ({ label, groupData, name, attributes, setAttributes }) => {
+const TwebToolbarGroup = ({ label, groupData, name, attributes, setAttributes, ...props }) => {
 	const [value, setValue] = useState(attributes[name]);
 
 	return (
@@ -32,6 +32,7 @@ const TwebToolbarGroup = ({ label, groupData, name, attributes, setAttributes })
 								});
 							},
 						})) }
+						{ ...props }
 					/>
 				) }
 			</ToolbarItem>

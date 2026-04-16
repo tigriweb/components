@@ -2,11 +2,10 @@ import {
 	TextControl,
 } from '@wordpress/components';
 
-const TwebBlockTextControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
+const TwebBlockTextControl = ({ label, help, name, onChange, attributes, setAttributes, ...props }) => {
 	return (
 		<TextControl
 			__next40pxDefaultSize
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			value={ attributes[name] }
@@ -15,6 +14,7 @@ const TwebBlockTextControl = ({ label, help, name, onChange, attributes, setAttr
 					[name]: value,
 				});
 			}) }
+			{ ...props }
 		/>
 	);
 };

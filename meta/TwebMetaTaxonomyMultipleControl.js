@@ -11,7 +11,7 @@ import {
 	twebWithPostMeta,
 } from '../helpers';
 
-const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue }) => {
+const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonomy, metaValue, setMetaValue, ...props }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
@@ -19,13 +19,11 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(taxonomyRecords !== null) && (taxonomyRecords.length > 0) ? (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						metaValue.map(termId => {
@@ -56,14 +54,15 @@ const TwebMetaTaxonomyMultipleControl = twebWithPostMeta(({ label, help, taxonom
 						setMetaValue(selectedTermsIds);
 					} }
 					__experimentalExpandOnFocus={ true }
+					{ ...props }
 				/>
 			) : (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

@@ -6,7 +6,7 @@ import {
 	twebWithPostMeta,
 } from '../helpers';
 
-const TwebMetaNumberControl = twebWithPostMeta(({ label, help, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, metaValue, setMetaValue }) => {
+const TwebMetaNumberControl = twebWithPostMeta(({ label, help, dragDirection, dragThreshold, spinControls, isDragEnabled, labelPosition, min, max, required, step, metaValue, setMetaValue, ...props }) => {
 	return (
 		<NumberControl
 			__next40pxDefaultSize
@@ -25,6 +25,7 @@ const TwebMetaNumberControl = twebWithPostMeta(({ label, help, dragDirection, dr
 			onChange={ value => {
 				setMetaValue(value);
 			} }
+			{ ...props }
 		/>
 	);
 });

@@ -7,7 +7,7 @@ import {
 	useSelect,
 } from '@wordpress/data';
 
-const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attributes, setAttributes }) => {
+const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attributes, setAttributes, ...props }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
@@ -15,14 +15,12 @@ const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attri
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{taxonomyRecords !== null ? (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					value={ attributes[name] }
 					options={ [
 						{ value: '', label: '----' },
@@ -33,16 +31,17 @@ const TwebBlockTaxonomyControl = ({ label, help, taxonomy, name, onChange, attri
 							[name]: value,
 						});
 					}) }
+					{ ...props }
 				/>
 			) : (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',
 					}] }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

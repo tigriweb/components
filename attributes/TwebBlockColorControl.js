@@ -9,7 +9,7 @@ import {
 import { useSelect } from '@wordpress/data';
 import { useState } from '@wordpress/element';
 
-const TwebBlockColorControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
+const TwebBlockColorControl = ({ label, help, name, onChange, attributes, setAttributes, ...props }) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const colors = useSelect(
@@ -21,7 +21,6 @@ const TwebBlockColorControl = ({ label, help, name, onChange, attributes, setAtt
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
@@ -60,6 +59,7 @@ const TwebBlockColorControl = ({ label, help, name, onChange, attributes, setAtt
 									[name]: value,
 								});
 							}) }
+							{ ...props }
 						/>
 					</div>
 				</Popover>

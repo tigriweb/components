@@ -14,7 +14,7 @@ import {
 	twebWithPostMeta,
 } from '../helpers';
 
-const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help, currentDate, is12Hour, dateOrder = 'dmy', isInvalidDate, onMonthPreviewed, events, startOfWeek, type = 'datetime', metaValue, setMetaValue }) => {
+const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help, currentDate, is12Hour, dateOrder = 'dmy', isInvalidDate, onMonthPreviewed, events, startOfWeek, type = 'datetime', metaValue, setMetaValue, ...props }) => {
 	const [isPopoverVisible, setIsPopoverVisible] = useState(false);
 	const [popoverAnchor, setPopoverAnchor] = useState();
 
@@ -47,6 +47,7 @@ const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help
 					onChange={ newDate => handleDateChange(newDate) }
 					isInvalidDate={ isInvalidDate }
 					startOfWeek={ startOfWeek }
+					{ ...props }
 				/>
 			);
 		case 'datetime':
@@ -61,6 +62,7 @@ const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help
 					onMonthPreviewed={ onMonthPreviewed }
 					events={ events }
 					startOfWeek={ startOfWeek }
+					{ ...props }
 				/>
 			);
 		}
@@ -69,7 +71,6 @@ const TwebMetaDateTimeControl = twebWithPostMeta(({ label, labelButtonText, help
 	return (
 		<>
 			<BaseControl
-				__nextHasNoMarginBottom
 				label={ label }
 				help={ help }
 			>

@@ -13,7 +13,7 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
+const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue, ...props }) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const colors = useSelect(
@@ -23,7 +23,6 @@ const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
@@ -60,6 +59,7 @@ const TwebMetaColorControl = twebWithPostMeta(({ label, help, metaValue, setMeta
 							onChange={ value => {
 								setMetaValue(value);
 							} }
+							{ ...props }
 						/>
 					</div>
 				</Popover>

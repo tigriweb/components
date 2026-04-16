@@ -7,10 +7,9 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaRadioControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue }) => {
+const TwebMetaRadioControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue, ...props }) => {
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
@@ -23,6 +22,7 @@ const TwebMetaRadioControl = twebWithPostMeta(({ label, help, choices, metaValue
 				onChange={ value => {
 					setMetaValue(value);
 				} }
+				{ ...props }
 			/>
 		</BaseControl>
 	);

@@ -6,10 +6,9 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaTextareaControl = twebWithPostMeta(({ label, help, type, metaValue, setMetaValue }) => {
+const TwebMetaTextareaControl = twebWithPostMeta(({ label, help, type, metaValue, setMetaValue, ...props }) => {
 	return (
 		<TextareaControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			type={ type }
@@ -17,6 +16,7 @@ const TwebMetaTextareaControl = twebWithPostMeta(({ label, help, type, metaValue
 			onChange={ value => {
 				setMetaValue(value);
 			} }
+			{ ...props }
 		/>
 	);
 });

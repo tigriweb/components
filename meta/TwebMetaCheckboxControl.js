@@ -6,16 +6,16 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaCheckboxControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue }) => {
+const TwebMetaCheckboxControl = twebWithPostMeta(({ label, help, metaValue, setMetaValue, ...props }) => {
 	return (
 		<CheckboxControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			checked={ metaValue }
 			onChange={ value => {
 				setMetaValue(value);
 			} }
+			{ ...props }
 		/>
 	);
 });

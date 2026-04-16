@@ -11,7 +11,7 @@ import {
 	twebWithPostMeta,
 } from '../helpers';
 
-const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue }) => {
+const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue, ...props }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
@@ -19,13 +19,11 @@ const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postTyp
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(postTypeRecords !== null) && (postTypeRecords.length > 0) ? (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						metaValue.map(postId => {
@@ -56,14 +54,15 @@ const TwebMetaPostTypeMultipleControl = twebWithPostMeta(({ label, help, postTyp
 						setMetaValue(selectedPostsIds);
 					} }
 					__experimentalExpandOnFocus={ true }
+					{ ...props }
 				/>
 			) : (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

@@ -6,7 +6,7 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1, beforeIcon, metaValue, setMetaValue }) => {
+const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1, beforeIcon, metaValue, setMetaValue, ...props }) => {
 	const iconWithFixRailHeight = beforeIcon ? (
 		<span style={ { marginTop: '-4px', display: 'flex' } }>{ beforeIcon }</span>
 	) : undefined;
@@ -14,7 +14,6 @@ const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1
 	return (
 		<RangeControl
 			__next40pxDefaultSize
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			value={ metaValue }
@@ -25,6 +24,7 @@ const TwebMetaRangeControl = twebWithPostMeta(({ label, help, min, max, step = 1
 			onChange={ value => {
 				setMetaValue(value);
 			} }
+			{ ...props }
 		/>
 	);
 });

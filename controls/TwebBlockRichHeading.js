@@ -29,7 +29,7 @@ import {
 	paragraph,
 } from '@wordpress/icons';
 
-const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes }) => {
+const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes, ...props }) => {
 	const [level, setLevel] = useState(attributes[name]?.level ?? 'h2');
 
 	const headingLevels  = [
@@ -89,13 +89,14 @@ const TwebBlockRichHeading = ({ className, value, allowedFormats, onChange, plac
 					});
 				}) }
 				placeholder={ placeholder }
+				{ ...props }
 			/>
 		</>
 	);
 };
 
 // eslint-disable-next-line react/display-name
-TwebBlockRichHeading.Content = ({ className, value }) => {
+TwebBlockRichHeading.Content = ({ className, value, ...props }) => {
 	const level   = value.level ?? 'h2';
 	const content = value.content  ?? '';
 
@@ -104,6 +105,7 @@ TwebBlockRichHeading.Content = ({ className, value }) => {
 			tagName={ level }
 			className={ className }
 			value={ content  }
+			{ ...props }
 		/>
 	);
 };

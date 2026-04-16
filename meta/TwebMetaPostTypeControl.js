@@ -11,7 +11,7 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue }) => {
+const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaValue, setMetaValue, ...props }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
@@ -19,14 +19,12 @@ const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaV
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			{postTypeRecords !== null ? (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					value={ metaValue }
 					options={ [
 						{ value: '', label: '----' },
@@ -35,16 +33,17 @@ const TwebMetaPostTypeControl = twebWithPostMeta(({ label, help, postType, metaV
 					onChange={ value => {
 						setMetaValue(value);
 					} }
+					{ ...props }
 				/>
 			) : (
 				<SelectControl
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					options={ [{
 						value: '',
 						label: '----',
 					}] }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

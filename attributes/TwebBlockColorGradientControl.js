@@ -11,7 +11,7 @@ import {
 
 import { useState } from '@wordpress/element';
 
-const TwebBlockColorGradientControl = ({ label, help, nameColor, nameGradient, onColorChange, onGradientChange, attributes, setAttributes }) => {
+const TwebBlockColorGradientControl = ({ label, help, nameColor, nameGradient, onColorChange, onGradientChange, attributes, setAttributes, ...props }) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const colorValue    = attributes[nameColor] ?? null;
@@ -19,7 +19,6 @@ const TwebBlockColorGradientControl = ({ label, help, nameColor, nameGradient, o
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
@@ -64,6 +63,7 @@ const TwebBlockColorGradientControl = ({ label, help, nameColor, nameGradient, o
 									[nameGradient]: value,
 								});
 							}) }
+							{ ...props }
 						/>
 					</div>
 				</Popover>

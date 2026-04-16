@@ -2,10 +2,9 @@ import {
 	CheckboxControl,
 } from '@wordpress/components';
 
-const TwebBlockCheckboxControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
+const TwebBlockCheckboxControl = ({ label, help, name, onChange, attributes, setAttributes, ...props }) => {
 	return (
 		<CheckboxControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			checked={ attributes[name] }
@@ -14,6 +13,7 @@ const TwebBlockCheckboxControl = ({ label, help, name, onChange, attributes, set
 					[name]: value,
 				});
 			}) }
+			{ ...props }
 		/>
 	);
 };

@@ -7,16 +7,14 @@ import {
 	twebWithPostMeta,
 } from './../helpers';
 
-const TwebMetaSelectControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue }) => {
+const TwebMetaSelectControl = twebWithPostMeta(({ label, help, choices, metaValue, setMetaValue, ...props }) => {
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 		>
 			<SelectControl
 				__next40pxDefaultSize
-				__nextHasNoMarginBottom
 				value={ metaValue }
 				options={ Object.entries(choices).map(([value, label]) => ({
 					value,
@@ -25,6 +23,7 @@ const TwebMetaSelectControl = twebWithPostMeta(({ label, help, choices, metaValu
 				onChange={ value => {
 					setMetaValue(value);
 				} }
+				{ ...props }
 			/>
 		</BaseControl>
 	);

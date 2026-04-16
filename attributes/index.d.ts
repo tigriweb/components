@@ -130,7 +130,7 @@ declare module '@tigriweb/components/attributes' {
 		onChange?: (value: number) => void;
 		attributes: Record<string, any>;
 		setAttributes: (attributes: Record<string, any>) => void;
-	}): React.JSX.Element;
+	} & Record<string, any>): React.JSX.Element;
 
 	export function TwebBlockSelectControl(props: {
 		label: string;

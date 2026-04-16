@@ -7,7 +7,7 @@ import {
 	useSelect,
 } from '@wordpress/data';
 
-const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChange, attributes, setAttributes }) => {
+const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChange, attributes, setAttributes, ...props }) => {
 	const postTypeRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('postType', postType, { status: 'publish', per_page: -1, _fields: 'id,title' });
@@ -15,13 +15,11 @@ const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChang
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(postTypeRecords !== null) && (postTypeRecords.length > 0) ? (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						attributes[name].map(postId => {
@@ -54,14 +52,15 @@ const TwebBlockPostTypeMultipleControl = ({ label, help, postType, name, onChang
 						});
 					}) }
 					__experimentalExpandOnFocus={ true }
+					{ ...props }
 				/>
 			) : (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

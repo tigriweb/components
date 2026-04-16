@@ -3,7 +3,7 @@ import {
 	ToolbarButton,
 } from '@wordpress/components';
 
-const TwebToolbarButton = ({ label, icon, name, onClick, attributes, setAttributes }) => {
+const TwebToolbarButton = ({ label, icon, name, onClick, attributes, setAttributes, ...props }) => {
 	return (
 		<ToolbarGroup>
 			<ToolbarButton
@@ -16,6 +16,7 @@ const TwebToolbarButton = ({ label, icon, name, onClick, attributes, setAttribut
 					});
 				}) }
 				isActive={ attributes[name] }
+				{ ...props }
 			/>
 		</ToolbarGroup>
 	);

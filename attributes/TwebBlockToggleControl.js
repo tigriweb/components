@@ -6,10 +6,9 @@ import {
 	twebGetTextFromArray,
 } from './../helpers';
 
-const TwebBlockToggleControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
+const TwebBlockToggleControl = ({ label, help, name, onChange, attributes, setAttributes, ...props }) => {
 	return (
 		<ToggleControl
-			__nextHasNoMarginBottom
 			label={ twebGetTextFromArray(label, attributes[name]) }
 			help={ twebGetTextFromArray(help, attributes[name]) }
 			checked={ attributes[name] }
@@ -18,6 +17,7 @@ const TwebBlockToggleControl = ({ label, help, name, onChange, attributes, setAt
 					[name]: value,
 				});
 			}) }
+			{ ...props }
 		/>
 	);
 };

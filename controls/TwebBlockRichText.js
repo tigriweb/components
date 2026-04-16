@@ -2,7 +2,7 @@ import {
 	RichText,
 } from '@wordpress/block-editor';
 
-const TwebBlockRichText = ({ tagName, className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes }) => {
+const TwebBlockRichText = ({ tagName, className, value, allowedFormats, onChange, placeholder, name, attributes, setAttributes, ...props }) => {
 	return (
 		<RichText
 			tagName={ tagName }
@@ -15,16 +15,18 @@ const TwebBlockRichText = ({ tagName, className, value, allowedFormats, onChange
 				});
 			}) }
 			placeholder={ placeholder }
+			{ ...props }
 		/>
 	);
 };
 
 // eslint-disable-next-line react/display-name
-TwebBlockRichText.Content = ({ tagName, className, value }) => (
+TwebBlockRichText.Content = ({ tagName, className, value, ...props }) => (
 	<RichText.Content
 		tagName={ tagName }
 		className={ className }
 		value={ value }
+		{ ...props }
 	/>
 );
 

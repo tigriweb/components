@@ -7,7 +7,7 @@ import {
 	useSelect,
 } from '@wordpress/data';
 
-const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChange, attributes, setAttributes }) => {
+const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChange, attributes, setAttributes, ...props }) => {
 	const taxonomyRecords = useSelect(select => {
 		// eslint-disable-next-line camelcase
 		return select('core').getEntityRecords('taxonomy', taxonomy, { per_page: -1, _fields: 'id,name' });
@@ -15,13 +15,11 @@ const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChang
 
 	return (
 		<BaseControl
-			__nextHasNoMarginBottom
 			help={ help }
 		>
 			{(taxonomyRecords !== null) && (taxonomyRecords.length > 0) ? (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					value={
 						attributes[name].map(termId => {
@@ -54,14 +52,15 @@ const TwebBlockTaxonomyMultipleControl = ({ label, help, taxonomy, name, onChang
 						});
 					}) }
 					__experimentalExpandOnFocus={ true }
+					{ ...props }
 				/>
 			) : (
 				<FormTokenField
 					__next40pxDefaultSize
-					__nextHasNoMarginBottom
 					label={ label }
 					placeholder={ '----' }
 					disabled
+					{ ...props }
 				/>
 			)}
 		</BaseControl>

@@ -2,10 +2,9 @@ import {
 	TextareaControl,
 } from '@wordpress/components';
 
-const TwebBlockTextareaControl = ({ label, help, name, onChange, attributes, setAttributes }) => {
+const TwebBlockTextareaControl = ({ label, help, name, onChange, attributes, setAttributes, ...props }) => {
 	return (
 		<TextareaControl
-			__nextHasNoMarginBottom
 			label={ label }
 			help={ help }
 			value={ attributes[name] }
@@ -14,6 +13,7 @@ const TwebBlockTextareaControl = ({ label, help, name, onChange, attributes, set
 					[name]: value,
 				});
 			}) }
+			{ ...props }
 		/>
 	);
 };
